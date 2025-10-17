@@ -3,31 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechRedes - O Mundo das Redes de Computadores</title>
+    <title>TechRedes - O Universo das Redes de Computadores</title>
     <script src="https://cdn.tailwindcss.com"></script>
+
+
     <style>
         body {
             box-sizing: border-box;
+            background: #0a0a0a;
+            color: #ffffff !important;
+        }
+        
+        * {
+            color: #ffffff !important;
         }
         
         .gradient-bg {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+        }
+        
+        .dark-card {
+            background: linear-gradient(145deg, #1e1e2e, #2a2a3e);
+            border: 1px solid #333344;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         
         .tech-card {
             transition: all 0.3s ease;
             backdrop-filter: blur(10px);
+            background: linear-gradient(145deg, #1e1e2e, #2a2a3e);
+            border: 1px solid #333344;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
         
         .tech-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
+            border-color: #4f46e5;
         }
         
         .timeline-item {
             opacity: 0;
             transform: translateX(-50px);
             transition: all 0.6s ease;
+            background: linear-gradient(145deg, #1e1e2e, #2a2a3e);
+            border: 1px solid #333344;
+            color: #e2e8f0;
         }
         
         .timeline-item.visible {
@@ -35,22 +56,17 @@
             transform: translateX(0);
         }
         
-        .network-animation {
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-        
         .interactive-btn {
             transition: all 0.3s ease;
+            background: linear-gradient(145deg, #4f46e5, #7c3aed);
+            border: 1px solid #6366f1;
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
         }
         
         .interactive-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+            background: linear-gradient(145deg, #6366f1, #8b5cf6);
         }
         
         .tab-content {
@@ -75,25 +91,275 @@
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
+        
+        .quiz-question {
+            animation: slideIn 0.5s ease-out;
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        .quiz-option {
+            transition: all 0.2s ease;
+            background: linear-gradient(145deg, #2a2a3e, #1e1e2e);
+            border: 1px solid #333344;
+            color: #e2e8f0;
+        }
+        
+        .quiz-option:hover {
+            transform: translateX(5px);
+            background: linear-gradient(145deg, #3a3a4e, #2e2e3e);
+            border-color: #4f46e5;
+        }
+        
+        .quiz-option.correct {
+            background: linear-gradient(145deg, #065f46, #047857);
+            border-color: #10b981;
+        }
+        
+        .quiz-option.incorrect {
+            background: linear-gradient(145deg, #7f1d1d, #991b1b);
+            border-color: #ef4444;
+        }
+        
+        .quiz-option.selected {
+            border-color: #4f46e5;
+            background: linear-gradient(145deg, #3730a3, #4338ca);
+        }
+        
+        @media (max-width: 768px) {
+            .tech-card {
+                margin-bottom: 1rem;
+            }
+            
+            .timeline-item {
+                transform: translateY(-20px);
+            }
+            
+            .timeline-item.visible {
+                transform: translateY(0);
+            }
+        }
+        
+        .progress-bar-container {
+            background: linear-gradient(90deg, #2a2a3e, #1e1e2e);
+            border-radius: 9999px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, #8b5cf6, #3b82f6);
+            transition: width 0.3s ease;
+            border-radius: 9999px;
+        }
+        
+        .loading-spinner {
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .fade-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .dark-section {
+            background: linear-gradient(145deg, #0f0f1a, #1a1a2e);
+        }
+        
+        .dark-text {
+            color: #ffffff !important;
+        }
+        
+        .dark-text-secondary {
+            color: #e2e8f0 !important;
+        }
+        
+        h1, h2, h3, h4, h5, h6, p, span, div, li, a {
+            color: #ffffff !important;
+        }
+        
+        .accent-border {
+            border-color: #4f46e5;
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(79, 70, 229, 0.3);
+        }
+        
+        .dark-input {
+            background: linear-gradient(145deg, #2a2a3e, #1e1e2e);
+            border: 1px solid #333344;
+            color: #e2e8f0;
+        }
+        
+        .dark-input:focus {
+            border-color: #4f46e5;
+            box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+        }
+        
+        .neon-text {
+            text-shadow: 0 0 10px rgba(79, 70, 229, 0.5);
+        }
+        
+        .network-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .score-display {
+            background: linear-gradient(145deg, #1e3a8a, #1e40af);
+            border: 2px solid #3b82f6;
+        }
+        
+        .question-counter {
+            background: linear-gradient(145deg, #7c2d12, #ea580c);
+            border: 2px solid #f97316;
+        }
+
+        .study-tab {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .study-tab.active {
+            background: linear-gradient(145deg, #4f46e5, #7c3aed);
+            border-color: #6366f1;
+            transform: translateY(-2px);
+        }
+        
+        .study-tab:hover {
+            transform: translateY(-2px);
+            border-color: #4f46e5;
+        }
+        
+        .study-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .study-content.active {
+            max-height: 2000px;
+        }
+        
+        .concept-card {
+            background: linear-gradient(145deg, #1e1e2e, #2a2a3e);
+            border: 1px solid #333344;
+            transition: all 0.3s ease;
+        }
+        
+        .concept-card:hover {
+            border-color: #4f46e5;
+            transform: translateY(-2px);
+        }
+        
+        .highlight-box {
+            background: linear-gradient(145deg, #1e3a8a, #1e40af);
+            border: 1px solid #3b82f6;
+        }
+        
+        .warning-box {
+            background: linear-gradient(145deg, #7c2d12, #ea580c);
+            border: 1px solid #f97316;
+        }
+        
+        .success-box {
+            background: linear-gradient(145deg, #065f46, #047857);
+            border: 1px solid #10b981;
+        }
+        
+        .info-box {
+            background: linear-gradient(145deg, #7c2d12, #a855f7);
+            border: 1px solid #c084fc;
+        }
     </style>
 </head>
-<body class="bg-gray-50 font-sans">
+<body class="bg-gray-900 font-sans text-gray-100">
+    <!-- Welcome Modal -->
+    <div id="welcomeModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div class="bg-gradient-to-br from-gray-800 to-gray-900 max-w-2xl mx-4 p-8 rounded-2xl shadow-2xl border border-purple-500 text-white">
+            <div class="text-center">
+                <div class="flex items-center justify-center space-x-3 mb-6">
+                    <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                        <span class="text-white font-bold text-3xl">🌐</span>
+                    </div>
+                    <h1 class="text-4xl font-bold text-white">TechRedes</h1>
+                </div>
+                
+                <h2 class="text-2xl font-bold text-white mb-4">Bem-vindo ao Universo das Redes</h2>
+                <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                    Explore o fascinante mundo das redes de computadores, desde os protocolos fundamentais até as tecnologias mais avançadas que conectam o mundo digital.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                    <div class="bg-gray-700 p-4 rounded-lg border border-gray-600">
+                        <div class="text-2xl mb-2">📡</div>
+                        <h3 class="font-semibold text-blue-400 text-sm">Protocolos</h3>
+                        <p class="text-xs text-gray-300">TCP/IP, HTTP, DNS e mais</p>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg border border-gray-600">
+                        <div class="text-2xl mb-2">🔒</div>
+                        <h3 class="font-semibold text-green-400 text-sm">Segurança</h3>
+                        <p class="text-xs text-gray-300">Firewalls, VPN, Criptografia</p>
+                    </div>
+                    <div class="bg-gray-700 p-4 rounded-lg border border-gray-600">
+                        <div class="text-2xl mb-2">🧠</div>
+                        <h3 class="font-semibold text-purple-400 text-sm">Quiz Interativo</h3>
+                        <p class="text-xs text-gray-300">Teste seus conhecimentos</p>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="startExploration()" class="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:from-purple-700 hover:to-blue-700 transition-all">
+                        🚀 Começar Jornada
+                    </button>
+                    <button onclick="closeWelcomeModal()" class="bg-gray-600 text-gray-300 px-8 py-3 rounded-full font-semibold hover:bg-gray-700 transition-colors border border-gray-500">
+                        ⏭️ Pular Introdução
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Header -->
-    <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+    <header class="gradient-bg text-white shadow-2xl sticky top-0 z-50 border-b border-gray-700">
         <nav class="container mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
                 <div class="flex items-center space-x-2">
-                    <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-                        <span class="text-purple-600 font-bold text-xl">🌐</span>
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full flex items-center justify-center glow-effect">
+                        <span class="text-white font-bold text-xl">🌐</span>
                     </div>
-                    <h1 class="text-2xl font-bold">TechRedes</h1>
+                    <h1 class="text-2xl font-bold neon-text">TechRedes</h1>
                 </div>
                 <div class="hidden md:flex space-x-6">
-                    <a href="#home" class="hover:text-purple-200 transition-colors">Início</a>
-                    <a href="#historia" class="hover:text-purple-200 transition-colors">História</a>
-                    <a href="#tipos" class="hover:text-purple-200 transition-colors">Tipos de Redes</a>
-                    <a href="#sistemas" class="hover:text-purple-200 transition-colors">Sistemas</a>
-                    <a href="#curiosidades" class="hover:text-purple-200 transition-colors">Curiosidades</a>
+                    <a href="#home" class="hover:text-blue-300 transition-colors">Início</a>
+                    <a href="#historia" class="hover:text-blue-300 transition-colors">História</a>
+                    <a href="#protocolos" class="hover:text-blue-300 transition-colors">Protocolos</a>
+                    <a href="#topologias" class="hover:text-blue-300 transition-colors">Topologias</a>
+                    <a href="#seguranca" class="hover:text-blue-300 transition-colors">Segurança</a>
+                    <a href="#estudos" class="hover:text-blue-300 transition-colors">Material de Estudo</a>
+                    <a href="#quiz" class="hover:text-blue-300 transition-colors">Quiz</a>
                 </div>
                 <button id="menuBtn" class="md:hidden">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -102,11 +368,13 @@
                 </button>
             </div>
             <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
-                <a href="#home" class="block hover:text-purple-200 transition-colors">Início</a>
-                <a href="#historia" class="block hover:text-purple-200 transition-colors">História</a>
-                <a href="#tipos" class="block hover:text-purple-200 transition-colors">Tipos de Redes</a>
-                <a href="#sistemas" class="block hover:text-purple-200 transition-colors">Sistemas</a>
-                <a href="#curiosidades" class="block hover:text-purple-200 transition-colors">Curiosidades</a>
+                <a href="#home" class="block hover:text-blue-300 transition-colors">Início</a>
+                <a href="#historia" class="block hover:text-blue-300 transition-colors">História</a>
+                <a href="#protocolos" class="block hover:text-blue-300 transition-colors">Protocolos</a>
+                <a href="#topologias" class="block hover:text-blue-300 transition-colors">Topologias</a>
+                <a href="#seguranca" class="block hover:text-blue-300 transition-colors">Segurança</a>
+                <a href="#estudos" class="block hover:text-blue-300 transition-colors">Material de Estudo</a>
+                <a href="#quiz" class="block hover:text-blue-300 transition-colors">Quiz</a>
             </div>
         </nav>
     </header>
@@ -115,730 +383,1938 @@
     <section id="home" class="gradient-bg text-white py-20">
         <div class="container mx-auto px-6 text-center">
             <div class="floating-element">
-                <h2 class="text-5xl md:text-7xl font-bold mb-6">O Mundo das Redes</h2>
-                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Explore a fascinante evolução das redes de computadores, desde os primeiros sistemas até as tecnologias mais avançadas de hoje</p>
+                <h2 class="text-5xl md:text-7xl font-bold mb-6 neon-text">O Universo das Redes</h2>
+                <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto text-blue-100">Descubra como os computadores se conectam e comunicam, desde redes locais até a internet global que conecta bilhões de dispositivos</p>
             </div>
             <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
-                <button onclick="scrollToSection('historia')" class="interactive-btn bg-white text-purple-600 px-8 py-4 rounded-full font-semibold">
-                    🕰️ Descobrir História
+                <button onclick="scrollToSection('historia')" class="interactive-btn text-white px-8 py-4 rounded-full font-semibold">
+                    🕰️ História das Redes
                 </button>
-                <button onclick="scrollToSection('tipos')" class="interactive-btn bg-purple-500 border-2 border-white px-8 py-4 rounded-full font-semibold">
-                    🌐 Explorar Tipos
+                <button onclick="scrollToSection('estudos')" class="interactive-btn text-white px-8 py-4 rounded-full font-semibold">
+                    📚 Material de Estudo
+                </button>
+                <button onclick="scrollToSection('protocolos')" class="interactive-btn text-white px-8 py-4 rounded-full font-semibold">
+                    📡 Explorar Protocolos
                 </button>
             </div>
         </div>
     </section>
 
     <!-- História das Redes -->
-    <section id="historia" class="py-20 bg-white">
+    <section id="historia" class="py-20" style="background: linear-gradient(145deg, #0f0f1a, #1a1a2e);">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">📚 História das Redes de Computadores</h2>
+            <h2 class="text-4xl font-bold text-center mb-16" style="color: #ffffff !important; text-shadow: 0 0 10px rgba(79, 70, 229, 0.5);">📚 História das Redes de Computadores</h2>
             
             <div class="max-w-4xl mx-auto">
-                <div class="timeline-item bg-gradient-to-r from-blue-50 to-purple-50 p-8 rounded-xl mb-8 border-l-4 border-blue-500">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-4">1962 - ARPANET: O Início</h3>
-                    <p class="text-gray-700 mb-4">A Advanced Research Projects Agency Network (ARPANET) foi a primeira rede de computadores de longa distância do mundo, criada pelo Departamento de Defesa dos EUA. Foi o precursor da Internet moderna.</p>
-                    <div class="bg-blue-100 p-4 rounded-lg">
-                        <strong>Curiosidade:</strong> A primeira mensagem enviada pela ARPANET foi "LO" - uma tentativa de enviar "LOGIN" que falhou na terceira letra!
+                <div class="p-8 rounded-xl mb-8 border-l-4" style="background: linear-gradient(145deg, #1e1e2e, #2a2a3e); border-color: #4f46e5; border: 1px solid #333344; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
+                    <h3 class="text-2xl font-bold mb-4" style="color: #60a5fa !important;">1969 - ARPANET: O Início de Tudo</h3>
+                    <p class="mb-4" style="color: #e2e8f0 !important;">A ARPANET foi a primeira rede de computadores, conectando universidades americanas. O primeiro teste bem-sucedido foi entre UCLA e Stanford, transmitindo a palavra "LOGIN" (mas só conseguiram enviar "LO" antes do sistema travar!).</p>
+                    <div class="p-4 rounded-lg" style="background: linear-gradient(145deg, #1e1e2e, #2a2a3e); border: 1px solid #333344;">
+                        <strong style="color: #93c5fd !important;">Marco:</strong> <span style="color: #e2e8f0 !important;">Primeira mensagem de rede da história em 29 de outubro de 1969</span>
                     </div>
                 </div>
 
-                <div class="timeline-item bg-gradient-to-r from-green-50 to-blue-50 p-8 rounded-xl mb-8 border-l-4 border-green-500">
-                    <h3 class="text-2xl font-bold text-green-600 mb-4">1973 - Protocolo TCP/IP</h3>
-                    <p class="text-gray-700 mb-4">Vint Cerf e Bob Kahn desenvolveram o protocolo TCP/IP, que se tornou a base fundamental para todas as comunicações na Internet. Este protocolo permitiu que diferentes redes se conectassem.</p>
-                    <div class="bg-green-100 p-4 rounded-lg">
-                        <strong>Impacto:</strong> O TCP/IP é usado até hoje e é considerado uma das invenções mais importantes da era digital.
+                <div class="p-8 rounded-xl mb-8 border-l-4" style="background: linear-gradient(145deg, #1e1e2e, #2a2a3e); border-color: #10b981; border: 1px solid #333344; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
+                    <h3 class="text-2xl font-bold mb-4" style="color: #34d399 !important;">1973 - TCP/IP: A Linguagem Universal</h3>
+                    <p class="mb-4" style="color: #e2e8f0 !important;">Vint Cerf e Bob Kahn desenvolveram o protocolo TCP/IP, que se tornou a base da internet moderna. Este protocolo permite que diferentes redes se comuniquem entre si.</p>
+                    <div class="p-4 rounded-lg" style="background: linear-gradient(145deg, #1e1e2e, #2a2a3e); border: 1px solid #333344;">
+                        <strong style="color: #6ee7b7 !important;">Importância:</strong> <span style="color: #e2e8f0 !important;">TCP/IP ainda é o protocolo fundamental da internet hoje!</span>
                     </div>
                 </div>
 
-                <div class="timeline-item bg-gradient-to-r from-purple-50 to-pink-50 p-8 rounded-xl mb-8 border-l-4 border-purple-500">
-                    <h3 class="text-2xl font-bold text-purple-600 mb-4">1989 - World Wide Web</h3>
-                    <p class="text-gray-700 mb-4">Tim Berners-Lee criou a World Wide Web no CERN, revolucionando como acessamos e compartilhamos informações. Introduziu conceitos como HTML, HTTP e URLs.</p>
-                    <div class="bg-purple-100 p-4 rounded-lg">
-                        <strong>Marco:</strong> O primeiro site da história ainda está online: info.cern.ch
+                <div class="p-8 rounded-xl mb-8 border-l-4" style="background: linear-gradient(145deg, #1e1e2e, #2a2a3e); border-color: #8b5cf6; border: 1px solid #333344; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
+                    <h3 class="text-2xl font-bold mb-4" style="color: #a78bfa !important;">1989 - World Wide Web</h3>
+                    <p class="mb-4" style="color: #e2e8f0 !important;">Tim Berners-Lee criou a World Wide Web no CERN, introduzindo conceitos como HTTP, HTML e URLs. Isso transformou a internet de uma ferramenta acadêmica em algo acessível para todos.</p>
+                    <div class="p-4 rounded-lg" style="background: linear-gradient(145deg, #1e1e2e, #2a2a3e); border: 1px solid #333344;">
+                        <strong style="color: #c4b5fd !important;">Revolução:</strong> <span style="color: #e2e8f0 !important;">A web democratizou o acesso à informação mundial</span>
                     </div>
                 </div>
 
-                <div class="timeline-item bg-gradient-to-r from-orange-50 to-red-50 p-8 rounded-xl mb-8 border-l-4 border-orange-500">
-                    <h3 class="text-2xl font-bold text-orange-600 mb-4">1995 - Era Comercial</h3>
-                    <p class="text-gray-700 mb-4">A Internet se tornou comercial, permitindo que empresas oferecessem serviços online. Nasceram os primeiros provedores de Internet comerciais e sites de e-commerce.</p>
-                    <div class="bg-orange-100 p-4 rounded-lg">
-                        <strong>Evolução:</strong> De 16 milhões de usuários em 1995 para mais de 5 bilhões hoje!
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <button onclick="showMoreHistory()" id="historyBtn" class="interactive-btn bg-gradient-to-r from-blue-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold">
-                    📖 Ver Mais Marcos Históricos
-                </button>
-            </div>
-
-            <div id="moreHistory" class="hidden max-w-4xl mx-auto mt-8">
-                <div class="timeline-item bg-gradient-to-r from-teal-50 to-cyan-50 p-8 rounded-xl mb-8 border-l-4 border-teal-500">
-                    <h3 class="text-2xl font-bold text-teal-600 mb-4">2000s - Banda Larga e WiFi</h3>
-                    <p class="text-gray-700 mb-4">A popularização da banda larga e das redes sem fio (WiFi) transformou como nos conectamos. O padrão 802.11 revolucionou a conectividade móvel.</p>
-                </div>
-
-                <div class="timeline-item bg-gradient-to-r from-indigo-50 to-purple-50 p-8 rounded-xl mb-8 border-l-4 border-indigo-500">
-                    <h3 class="text-2xl font-bold text-indigo-600 mb-4">2010s - Era Mobile e Cloud</h3>
-                    <p class="text-gray-700 mb-4">Smartphones e computação em nuvem mudaram completamente o paradigma das redes. 4G, depois 5G, e a explosão dos data centers.</p>
-                </div>
-
-                <div class="timeline-item bg-gradient-to-r from-pink-50 to-rose-50 p-8 rounded-xl mb-8 border-l-4 border-pink-500">
-                    <h3 class="text-2xl font-bold text-pink-600 mb-4">2020s - IoT e Edge Computing</h3>
-                    <p class="text-gray-700 mb-4">Internet das Coisas (IoT) e Edge Computing estão criando uma nova era de conectividade, com bilhões de dispositivos conectados.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Tipos de Redes -->
-    <section id="tipos" class="py-20 bg-gray-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">🌐 Tipos de Redes</h2>
-            
-            <div class="mb-12">
-                <div class="flex flex-wrap justify-center gap-4 mb-8">
-                    <button onclick="showNetworkType('lan')" class="network-tab interactive-btn bg-blue-500 text-white px-6 py-3 rounded-full font-semibold active">
-                        🏠 LAN
-                    </button>
-                    <button onclick="showNetworkType('wan')" class="network-tab interactive-btn bg-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold">
-                        🌍 WAN
-                    </button>
-                    <button onclick="showNetworkType('man')" class="network-tab interactive-btn bg-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold">
-                        🏙️ MAN
-                    </button>
-                    <button onclick="showNetworkType('pan')" class="network-tab interactive-btn bg-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold">
-                        📱 PAN
-                    </button>
-                    <button onclick="showNetworkType('vpn')" class="network-tab interactive-btn bg-gray-300 text-gray-700 px-6 py-3 rounded-full font-semibold">
-                        🔒 VPN
-                    </button>
-                </div>
-
-                <div id="lan" class="tab-content active">
-                    <div class="tech-card bg-white p-8 rounded-xl shadow-lg">
-                        <h3 class="text-3xl font-bold text-blue-600 mb-6">🏠 LAN - Local Area Network</h3>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Características:</h4>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• <strong>Alcance:</strong> Até 1 km (geralmente muito menor)</li>
-                                    <li>• <strong>Velocidade:</strong> 10 Mbps a 10 Gbps</li>
-                                    <li>• <strong>Propriedade:</strong> Privada</li>
-                                    <li>• <strong>Topologia:</strong> Estrela, Bus, Anel</li>
-                                    <li>• <strong>Meio:</strong> Cabo Ethernet, WiFi</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Aplicações:</h4>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• Redes domésticas</li>
-                                    <li>• Escritórios pequenos</li>
-                                    <li>• Laboratórios de informática</li>
-                                    <li>• Compartilhamento de recursos</li>
-                                    <li>• Jogos em rede local</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="mt-6 p-4 bg-blue-50 rounded-lg">
-                            <strong>💡 Dica:</strong> LANs são ideais para alta velocidade e baixa latência em ambientes controlados.
-                        </div>
+                <div class="p-8 rounded-xl mb-8 border-l-4" style="background: linear-gradient(145deg, #1e1e2e, #2a2a3e); border-color: #f97316; border: 1px solid #333344; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
+                    <h3 class="text-2xl font-bold mb-4" style="color: #fb923c !important;">1995 - Era Comercial da Internet</h3>
+                    <p class="mb-4" style="color: #e2e8f0 !important;">A internet deixou de ser restrita ao meio acadêmico e militar, abrindo-se para uso comercial. Surgiram os primeiros provedores de internet comerciais e sites de e-commerce.</p>
+                    <div class="p-4 rounded-lg" style="background: linear-gradient(145deg, #1e1e2e, #2a2a3e); border: 1px solid #333344;">
+                        <strong style="color: #fdba74 !important;">Impacto:</strong> <span style="color: #e2e8f0 !important;">Início da transformação digital da economia global</span>
                     </div>
                 </div>
 
-                <div id="wan" class="tab-content">
-                    <div class="tech-card bg-white p-8 rounded-xl shadow-lg">
-                        <h3 class="text-3xl font-bold text-green-600 mb-6">🌍 WAN - Wide Area Network</h3>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Características:</h4>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• <strong>Alcance:</strong> Países, continentes</li>
-                                    <li>• <strong>Velocidade:</strong> Varia muito (Kbps a Tbps)</li>
-                                    <li>• <strong>Propriedade:</strong> Pública/Privada</li>
-                                    <li>• <strong>Tecnologias:</strong> Fibra ótica, satélite</li>
-                                    <li>• <strong>Exemplo:</strong> Internet</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Tecnologias WAN:</h4>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• MPLS (Multi-Protocol Label Switching)</li>
-                                    <li>• Frame Relay</li>
-                                    <li>• ATM (Asynchronous Transfer Mode)</li>
-                                    <li>• Conexões via satélite</li>
-                                    <li>• Redes de fibra ótica</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="mt-6 p-4 bg-green-50 rounded-lg">
-                            <strong>🌐 Fato:</strong> A Internet é a maior WAN do mundo, conectando bilhões de dispositivos globalmente.
-                        </div>
+                <div class="p-8 rounded-xl mb-8 border-l-4" style="background: linear-gradient(145deg, #1e1e2e, #2a2a3e); border-color: #ef4444; border: 1px solid #333344; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
+                    <h3 class="text-2xl font-bold mb-4" style="color: #f87171 !important;">2000s - Era da Banda Larga</h3>
+                    <p class="mb-4" style="color: #e2e8f0 !important;">A popularização da banda larga revolucionou o uso da internet. Conexões mais rápidas permitiram streaming de vídeo, jogos online e o surgimento das redes sociais como Facebook e YouTube.</p>
+                    <div class="p-4 rounded-lg" style="background: linear-gradient(145deg, #1e1e2e, #2a2a3e); border: 1px solid #333344;">
+                        <strong style="color: #fca5a5 !important;">Transformação:</strong> <span style="color: #e2e8f0 !important;">Internet deixou de ser apenas texto para se tornar multimídia</span>
                     </div>
                 </div>
 
-                <div id="man" class="tab-content">
-                    <div class="tech-card bg-white p-8 rounded-xl shadow-lg">
-                        <h3 class="text-3xl font-bold text-purple-600 mb-6">🏙️ MAN - Metropolitan Area Network</h3>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Características:</h4>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• <strong>Alcance:</strong> 5-50 km (cidade)</li>
-                                    <li>• <strong>Velocidade:</strong> Alta (Gbps)</li>
-                                    <li>• <strong>Propriedade:</strong> Pública ou privada</li>
-                                    <li>• <strong>Tecnologia:</strong> Fibra ótica</li>
-                                    <li>• <strong>Padrão:</strong> IEEE 802.16 (WiMAX)</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Exemplos de Uso:</h4>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• Redes de TV a cabo</li>
-                                    <li>• Conexão entre campus universitários</li>
-                                    <li>• Redes municipais de WiFi</li>
-                                    <li>• Interconexão de LANs corporativas</li>
-                                    <li>• Backbones metropolitanos</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="mt-6 p-4 bg-purple-50 rounded-lg">
-                            <strong>🏙️ Exemplo:</strong> Muitas cidades têm MANs para conectar prédios governamentais e oferecer WiFi público.
-                        </div>
-                    </div>
-                </div>
-
-                <div id="pan" class="tab-content">
-                    <div class="tech-card bg-white p-8 rounded-xl shadow-lg">
-                        <h3 class="text-3xl font-bold text-orange-600 mb-6">📱 PAN - Personal Area Network</h3>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Características:</h4>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• <strong>Alcance:</strong> 1-10 metros</li>
-                                    <li>• <strong>Velocidade:</strong> 1-100 Mbps</li>
-                                    <li>• <strong>Tecnologias:</strong> Bluetooth, Zigbee</li>
-                                    <li>• <strong>Consumo:</strong> Baixo</li>
-                                    <li>• <strong>Mobilidade:</strong> Alta</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Dispositivos Comuns:</h4>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• Fones de ouvido Bluetooth</li>
-                                    <li>• Smartwatches</li>
-                                    <li>• Teclados e mouses sem fio</li>
-                                    <li>• Smartphones e tablets</li>
-                                    <li>• Dispositivos IoT pessoais</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="mt-6 p-4 bg-orange-50 rounded-lg">
-                            <strong>📱 Tendência:</strong> PANs estão evoluindo com tecnologias como Bluetooth 5.0 e protocolos IoT.
-                        </div>
-                    </div>
-                </div>
-
-                <div id="vpn" class="tab-content">
-                    <div class="tech-card bg-white p-8 rounded-xl shadow-lg">
-                        <h3 class="text-3xl font-bold text-red-600 mb-6">🔒 VPN - Virtual Private Network</h3>
-                        <div class="grid md:grid-cols-2 gap-8">
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Características:</h4>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• <strong>Segurança:</strong> Criptografia forte</li>
-                                    <li>• <strong>Privacidade:</strong> Túneis seguros</li>
-                                    <li>• <strong>Protocolos:</strong> OpenVPN, IPSec, L2TP</li>
-                                    <li>• <strong>Alcance:</strong> Global</li>
-                                    <li>• <strong>Custo:</strong> Econômico</li>
-                                </ul>
-                            </div>
-                            <div>
-                                <h4 class="text-xl font-semibold mb-4">Tipos de VPN:</h4>
-                                <ul class="space-y-2 text-gray-700">
-                                    <li>• <strong>Site-to-Site:</strong> Conecta redes</li>
-                                    <li>• <strong>Remote Access:</strong> Usuários remotos</li>
-                                    <li>• <strong>Client-to-Site:</strong> Acesso corporativo</li>
-                                    <li>• <strong>SSL VPN:</strong> Baseada em navegador</li>
-                                    <li>• <strong>Mobile VPN:</strong> Para dispositivos móveis</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="mt-6 p-4 bg-red-50 rounded-lg">
-                            <strong>🔐 Segurança:</strong> VPNs são essenciais para trabalho remoto e proteção de dados sensíveis.
-                        </div>
+                <div class="p-8 rounded-xl mb-8 border-l-4" style="background: linear-gradient(145deg, #1e1e2e, #2a2a3e); border-color: #06b6d4; border: 1px solid #333344; box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);">
+                    <h3 class="text-2xl font-bold mb-4" style="color: #22d3ee !important;">2010s - Era Mobile e Cloud</h3>
+                    <p class="mb-4" style="color: #e2e8f0 !important;">Smartphones e tablets mudaram como acessamos a internet. A computação em nuvem (AWS, Google Cloud) permitiu que qualquer pessoa criasse aplicações globais sem grandes investimentos em infraestrutura.</p>
+                    <div class="p-4 rounded-lg" style="background: linear-gradient(145deg, #1e1e2e, #2a2a3e); border: 1px solid #333344;">
+                        <strong style="color: #67e8f9 !important;">Revolução Mobile:</strong> <span style="color: #e2e8f0 !important;">Mais pessoas acessam internet pelo celular que pelo computador</span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sistemas Operacionais -->
-    <section id="sistemas" class="py-20 bg-white">
+    <!-- Protocolos de Rede -->
+    <section id="protocolos" class="py-20 bg-gray-800">
         <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">💻 Sistemas Operacionais para Redes</h2>
+            <h2 class="text-4xl font-bold text-center mb-16 dark-text neon-text">📡 Protocolos de Rede</h2>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                <div class="tech-card bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl border border-blue-200">
-                    <div class="text-4xl mb-4">🪟</div>
-                    <h3 class="text-2xl font-bold text-blue-600 mb-4">Windows Server</h3>
-                    <ul class="space-y-2 text-gray-700 mb-4">
-                        <li>• Active Directory</li>
-                        <li>• IIS (Internet Information Services)</li>
-                        <li>• Hyper-V para virtualização</li>
-                        <li>• PowerShell para automação</li>
-                        <li>• Integração com Azure</li>
+                <div class="tech-card p-6 rounded-xl shadow-lg border-l-4 border-blue-500">
+                    <div class="text-4xl mb-4">🌐</div>
+                    <h3 class="text-2xl font-bold text-blue-400 mb-4">TCP/IP</h3>
+                    <ul class="space-y-2 dark-text-secondary mb-4">
+                        <li>• <strong>TCP:</strong> Transmission Control Protocol</li>
+                        <li>• <strong>IP:</strong> Internet Protocol</li>
+                        <li>• Garante entrega confiável de dados</li>
+                        <li>• Base da internet moderna</li>
+                        <li>• Controle de fluxo e erro</li>
                     </ul>
-                    <div class="bg-blue-200 p-3 rounded-lg text-sm">
-                        <strong>Uso:</strong> 70% das redes corporativas
+                    <div class="dark-card p-3 rounded-lg text-sm">
+                        <strong class="text-blue-300">Camadas:</strong> <span class="dark-text-secondary">Aplicação, Transporte, Internet, Acesso à Rede</span>
                     </div>
                 </div>
 
-                <div class="tech-card bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-xl border border-red-200">
-                    <div class="text-4xl mb-4">🐧</div>
-                    <h3 class="text-2xl font-bold text-red-600 mb-4">Linux</h3>
-                    <ul class="space-y-2 text-gray-700 mb-4">
-                        <li>• Ubuntu Server, CentOS, RHEL</li>
-                        <li>• Apache/Nginx web servers</li>
-                        <li>• Docker e Kubernetes</li>
-                        <li>• Bash scripting</li>
-                        <li>• Open source e gratuito</li>
-                    </ul>
-                    <div class="bg-red-200 p-3 rounded-lg text-sm">
-                        <strong>Uso:</strong> 90% dos servidores web
-                    </div>
-                </div>
-
-                <div class="tech-card bg-gradient-to-br from-gray-50 to-gray-100 p-6 rounded-xl border border-gray-200">
-                    <div class="text-4xl mb-4">🍎</div>
-                    <h3 class="text-2xl font-bold text-gray-600 mb-4">macOS Server</h3>
-                    <ul class="space-y-2 text-gray-700 mb-4">
-                        <li>• Open Directory</li>
-                        <li>• Profile Manager</li>
-                        <li>• Caching Server</li>
-                        <li>• Time Machine Server</li>
-                        <li>• Integração com iOS</li>
-                    </ul>
-                    <div class="bg-gray-200 p-3 rounded-lg text-sm">
-                        <strong>Uso:</strong> Ambientes Apple/Creative
-                    </div>
-                </div>
-            </div>
-
-            <div class="max-w-4xl mx-auto">
-                <h3 class="text-3xl font-bold text-center mb-8 text-gray-800">🔧 Sistemas Especializados</h3>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="tech-card bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl border border-green-200">
-                        <h4 class="text-xl font-bold text-green-600 mb-4">🛡️ Sistemas de Segurança</h4>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>• <strong>pfSense:</strong> Firewall open source</li>
-                            <li>• <strong>Kali Linux:</strong> Testes de penetração</li>
-                            <li>• <strong>Security Onion:</strong> Monitoramento</li>
-                            <li>• <strong>OPNsense:</strong> Firewall avançado</li>
-                        </ul>
-                    </div>
-
-                    <div class="tech-card bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl border border-purple-200">
-                        <h4 class="text-xl font-bold text-purple-600 mb-4">📊 Monitoramento</h4>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>• <strong>Nagios:</strong> Monitoramento de rede</li>
-                            <li>• <strong>Zabbix:</strong> Monitoramento empresarial</li>
-                            <li>• <strong>PRTG:</strong> Monitoramento Windows</li>
-                            <li>• <strong>LibreNMS:</strong> Open source</li>
-                        </ul>
-                    </div>
-
-                    <div class="tech-card bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-xl border border-orange-200">
-                        <h4 class="text-xl font-bold text-orange-600 mb-4">☁️ Virtualização</h4>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>• <strong>VMware vSphere:</strong> Líder do mercado</li>
-                            <li>• <strong>Proxmox:</strong> Open source</li>
-                            <li>• <strong>Hyper-V:</strong> Microsoft</li>
-                            <li>• <strong>XenServer:</strong> Citrix</li>
-                        </ul>
-                    </div>
-
-                    <div class="tech-card bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-xl border border-teal-200">
-                        <h4 class="text-xl font-bold text-teal-600 mb-4">🌐 Roteadores/Switches</h4>
-                        <ul class="space-y-2 text-gray-700">
-                            <li>• <strong>Cisco IOS:</strong> Padrão da indústria</li>
-                            <li>• <strong>Juniper JunOS:</strong> Redes empresariais</li>
-                            <li>• <strong>OpenWrt:</strong> Roteadores domésticos</li>
-                            <li>• <strong>VyOS:</strong> Roteador virtual</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <button onclick="showOSComparison()" id="osComparisonBtn" class="interactive-btn bg-gradient-to-r from-purple-500 to-blue-600 text-white px-8 py-4 rounded-full font-semibold">
-                    📊 Comparar Sistemas Operacionais
-                </button>
-            </div>
-
-            <div id="osComparison" class="hidden max-w-6xl mx-auto mt-8">
-                <div class="bg-white p-8 rounded-xl shadow-lg overflow-x-auto">
-                    <h4 class="text-2xl font-bold text-center mb-6">Comparação Detalhada</h4>
-                    <table class="w-full text-sm">
-                        <thead>
-                            <tr class="bg-gray-100">
-                                <th class="p-3 text-left">Sistema</th>
-                                <th class="p-3 text-center">Custo</th>
-                                <th class="p-3 text-center">Facilidade</th>
-                                <th class="p-3 text-center">Segurança</th>
-                                <th class="p-3 text-center">Performance</th>
-                                <th class="p-3 text-center">Suporte</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="border-b">
-                                <td class="p-3 font-semibold">Windows Server</td>
-                                <td class="p-3 text-center">💰💰💰</td>
-                                <td class="p-3 text-center">⭐⭐⭐⭐⭐</td>
-                                <td class="p-3 text-center">⭐⭐⭐⭐</td>
-                                <td class="p-3 text-center">⭐⭐⭐⭐</td>
-                                <td class="p-3 text-center">⭐⭐⭐⭐⭐</td>
-                            </tr>
-                            <tr class="border-b">
-                                <td class="p-3 font-semibold">Linux</td>
-                                <td class="p-3 text-center">💰</td>
-                                <td class="p-3 text-center">⭐⭐⭐</td>
-                                <td class="p-3 text-center">⭐⭐⭐⭐⭐</td>
-                                <td class="p-3 text-center">⭐⭐⭐⭐⭐</td>
-                                <td class="p-3 text-center">⭐⭐⭐</td>
-                            </tr>
-                            <tr class="border-b">
-                                <td class="p-3 font-semibold">macOS Server</td>
-                                <td class="p-3 text-center">💰💰</td>
-                                <td class="p-3 text-center">⭐⭐⭐⭐</td>
-                                <td class="p-3 text-center">⭐⭐⭐⭐</td>
-                                <td class="p-3 text-center">⭐⭐⭐⭐</td>
-                                <td class="p-3 text-center">⭐⭐⭐⭐</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Curiosidades -->
-    <section id="curiosidades" class="py-20 bg-gradient-to-br from-purple-100 to-blue-100">
-        <div class="container mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-800">🎯 Curiosidades Fascinantes</h2>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-                <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
+                <div class="tech-card p-6 rounded-xl shadow-lg border-l-4 border-green-500">
                     <div class="text-4xl mb-4">🌍</div>
-                    <h3 class="text-xl font-bold text-purple-600 mb-4">Internet Global</h3>
-                    <p class="text-gray-700 mb-4">Existem mais de 1,7 bilhão de websites na Internet, mas apenas cerca de 200 milhões estão ativos!</p>
-                    <div class="bg-purple-50 p-3 rounded-lg text-sm">
-                        <strong>Fato:</strong> 4,66 bilhões de pessoas usam a Internet (59% da população mundial)
+                    <h3 class="text-2xl font-bold text-green-400 mb-4">HTTP/HTTPS</h3>
+                    <ul class="space-y-2 dark-text-secondary mb-4">
+                        <li>• HyperText Transfer Protocol</li>
+                        <li>• Protocolo da World Wide Web</li>
+                        <li>• HTTPS adiciona criptografia SSL/TLS</li>
+                        <li>• Métodos: GET, POST, PUT, DELETE</li>
+                        <li>• Códigos de status (200, 404, 500...)</li>
+                    </ul>
+                    <div class="dark-card p-3 rounded-lg text-sm">
+                        <strong class="text-green-300">Porta padrão:</strong> <span class="dark-text-secondary">HTTP: 80, HTTPS: 443</span>
                     </div>
                 </div>
 
-                <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
-                    <div class="text-4xl mb-4">⚡</div>
-                    <h3 class="text-xl font-bold text-blue-600 mb-4">Velocidade da Luz</h3>
-                    <p class="text-gray-700 mb-4">Os dados viajam pela fibra ótica a cerca de 200.000 km/s - 2/3 da velocidade da luz no vácuo!</p>
-                    <div class="bg-blue-50 p-3 rounded-lg text-sm">
-                        <strong>Comparação:</strong> Um sinal leva 67ms para ir de Nova York a Londres
+                <div class="tech-card p-6 rounded-xl shadow-lg border-l-4 border-purple-500">
+                    <div class="text-4xl mb-4">📧</div>
+                    <h3 class="text-2xl font-bold text-purple-400 mb-4">SMTP/POP3/IMAP</h3>
+                    <ul class="space-y-2 dark-text-secondary mb-4">
+                        <li>• <strong>SMTP:</strong> Envio de emails</li>
+                        <li>• <strong>POP3:</strong> Download de emails</li>
+                        <li>• <strong>IMAP:</strong> Sincronização de emails</li>
+                        <li>• Autenticação e criptografia</li>
+                        <li>• Suporte a anexos e HTML</li>
+                    </ul>
+                    <div class="dark-card p-3 rounded-lg text-sm">
+                        <strong class="text-purple-300">Portas:</strong> <span class="dark-text-secondary">SMTP: 25/587, POP3: 110, IMAP: 143</span>
                     </div>
                 </div>
 
-                <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
-                    <div class="text-4xl mb-4">📡</div>
-                    <h3 class="text-xl font-bold text-green-600 mb-4">Cabos Submarinos</h3>
-                    <p class="text-gray-700 mb-4">99% do tráfego internacional de dados passa por cabos submarinos - mais de 400 cabos conectam continentes!</p>
-                    <div class="bg-green-50 p-3 rounded-lg text-sm">
-                        <strong>Extensão:</strong> Mais de 1,3 milhão de km de cabos no fundo do mar
+                <div class="tech-card p-6 rounded-xl shadow-lg border-l-4 border-orange-500">
+                    <div class="text-4xl mb-4">🔍</div>
+                    <h3 class="text-2xl font-bold text-orange-400 mb-4">DNS</h3>
+                    <ul class="space-y-2 dark-text-secondary mb-4">
+                        <li>• Domain Name System</li>
+                        <li>• Traduz nomes em endereços IP</li>
+                        <li>• Hierarquia de servidores</li>
+                        <li>• Cache para performance</li>
+                        <li>• Tipos de registro (A, CNAME, MX...)</li>
+                    </ul>
+                    <div class="dark-card p-3 rounded-lg text-sm">
+                        <strong class="text-orange-300">Exemplo:</strong> <span class="dark-text-secondary">google.com → 142.250.191.14</span>
                     </div>
                 </div>
 
-                <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
-                    <div class="text-4xl mb-4">🔢</div>
-                    <h3 class="text-xl font-bold text-orange-600 mb-4">Endereços IP</h3>
-                    <p class="text-gray-700 mb-4">IPv4 permite 4,3 bilhões de endereços únicos, mas IPv6 permite 340 undecilhões (340 seguido de 36 zeros)!</p>
-                    <div class="bg-orange-50 p-3 rounded-lg text-sm">
-                        <strong>Quantidade:</strong> Suficiente para dar trilhões de IPs para cada pessoa na Terra
+                <div class="tech-card p-6 rounded-xl shadow-lg border-l-4 border-red-500">
+                    <div class="text-4xl mb-4">📁</div>
+                    <h3 class="text-2xl font-bold text-red-400 mb-4">FTP/SFTP</h3>
+                    <ul class="space-y-2 dark-text-secondary mb-4">
+                        <li>• File Transfer Protocol</li>
+                        <li>• Transferência de arquivos</li>
+                        <li>• SFTP adiciona criptografia SSH</li>
+                        <li>• Modos ativo e passivo</li>
+                        <li>• Autenticação por usuário/senha</li>
+                    </ul>
+                    <div class="dark-card p-3 rounded-lg text-sm">
+                        <strong class="text-red-300">Portas:</strong> <span class="dark-text-secondary">FTP: 21, SFTP: 22</span>
                     </div>
                 </div>
 
-                <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
-                    <div class="text-4xl mb-4">📊</div>
-                    <h3 class="text-xl font-bold text-red-600 mb-4">Tráfego de Dados</h3>
-                    <p class="text-gray-700 mb-4">A cada minuto, são enviados 500 horas de vídeo no YouTube e 41,6 milhões de mensagens no WhatsApp!</p>
-                    <div class="bg-red-50 p-3 rounded-lg text-sm">
-                        <strong>Volume:</strong> 2,5 quintilhões de bytes de dados são criados diariamente
+                <div class="tech-card p-6 rounded-xl shadow-lg border-l-4 border-teal-500">
+                    <div class="text-4xl mb-4">🔒</div>
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">SSH</h3>
+                    <ul class="space-y-2 dark-text-secondary mb-4">
+                        <li>• Secure Shell Protocol</li>
+                        <li>• Acesso remoto seguro</li>
+                        <li>• Criptografia forte</li>
+                        <li>• Autenticação por chave pública</li>
+                        <li>• Túneis seguros</li>
+                    </ul>
+                    <div class="dark-card p-3 rounded-lg text-sm">
+                        <strong class="text-teal-300">Porta:</strong> <span class="dark-text-secondary">22 (padrão)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topologias de Rede -->
+    <section id="topologias" class="py-20 dark-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 dark-text neon-text">🔗 Topologias de Rede</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <div class="tech-card p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-6xl mb-4">⭐</div>
+                    <h3 class="text-2xl font-bold text-blue-400 mb-4">Estrela (Star)</h3>
+                    <ul class="space-y-2 dark-text-secondary mb-4 text-left">
+                        <li>• Todos os nós conectados a um hub central</li>
+                        <li>• Fácil de instalar e gerenciar</li>
+                        <li>• Falha do hub afeta toda a rede</li>
+                        <li>• Mais comum em redes locais</li>
+                    </ul>
+                    <div class="dark-card p-3 rounded-lg text-sm">
+                        <strong class="text-blue-300">Vantagem:</strong> <span class="dark-text-secondary">Isolamento de falhas</span>
                     </div>
                 </div>
 
-                <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
-                    <div class="text-4xl mb-4">🛡️</div>
-                    <h3 class="text-xl font-bold text-indigo-600 mb-4">Ataques Cibernéticos</h3>
-                    <p class="text-gray-700 mb-4">Acontece um ataque cibernético a cada 39 segundos, afetando 1 em cada 3 americanos anualmente!</p>
-                    <div class="bg-indigo-50 p-3 rounded-lg text-sm">
-                        <strong>Custo:</strong> Prejuízo global de US$ 6 trilhões por ano
+                <div class="tech-card p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-6xl mb-4">🔄</div>
+                    <h3 class="text-2xl font-bold text-green-400 mb-4">Anel (Ring)</h3>
+                    <ul class="space-y-2 dark-text-secondary mb-4 text-left">
+                        <li>• Nós conectados em círculo fechado</li>
+                        <li>• Dados circulam em uma direção</li>
+                        <li>• Falha de um nó pode afetar toda rede</li>
+                        <li>• Usado em redes Token Ring</li>
+                    </ul>
+                    <div class="dark-card p-3 rounded-lg text-sm">
+                        <strong class="text-green-300">Característica:</strong> <span class="dark-text-secondary">Acesso determinístico</span>
+                    </div>
+                </div>
+
+                <div class="tech-card p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-6xl mb-4">📏</div>
+                    <h3 class="text-2xl font-bold text-purple-400 mb-4">Barramento (Bus)</h3>
+                    <ul class="space-y-2 dark-text-secondary mb-4 text-left">
+                        <li>• Todos os nós em um cabo principal</li>
+                        <li>• Simples e econômica</li>
+                        <li>• Colisões podem ocorrer</li>
+                        <li>• Falha no cabo principal para tudo</li>
+                    </ul>
+                    <div class="dark-card p-3 rounded-lg text-sm">
+                        <strong class="text-purple-300">Protocolo:</strong> <span class="dark-text-secondary">CSMA/CD (Ethernet)</span>
+                    </div>
+                </div>
+
+                <div class="tech-card p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-6xl mb-4">🕸️</div>
+                    <h3 class="text-2xl font-bold text-orange-400 mb-4">Malha (Mesh)</h3>
+                    <ul class="space-y-2 dark-text-secondary mb-4 text-left">
+                        <li>• Múltiplas conexões entre nós</li>
+                        <li>• Alta redundância e confiabilidade</li>
+                        <li>• Caro de implementar</li>
+                        <li>• Usado em redes críticas</li>
+                    </ul>
+                    <div class="dark-card p-3 rounded-lg text-sm">
+                        <strong class="text-orange-300">Tipos:</strong> <span class="dark-text-secondary">Completa ou Parcial</span>
+                    </div>
+                </div>
+
+                <div class="tech-card p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-6xl mb-4">🌳</div>
+                    <h3 class="text-2xl font-bold text-red-400 mb-4">Árvore (Tree)</h3>
+                    <ul class="space-y-2 dark-text-secondary mb-4 text-left">
+                        <li>• Hierarquia de nós e switches</li>
+                        <li>• Combina topologias estrela e barramento</li>
+                        <li>• Escalável para grandes redes</li>
+                        <li>• Falha na raiz afeta sub-redes</li>
+                    </ul>
+                    <div class="dark-card p-3 rounded-lg text-sm">
+                        <strong class="text-red-300">Uso:</strong> <span class="dark-text-secondary">Redes corporativas grandes</span>
+                    </div>
+                </div>
+
+                <div class="tech-card p-6 rounded-xl shadow-lg text-center">
+                    <div class="text-6xl mb-4">🔗</div>
+                    <h3 class="text-2xl font-bold text-teal-400 mb-4">Híbrida</h3>
+                    <ul class="space-y-2 dark-text-secondary mb-4 text-left">
+                        <li>• Combinação de duas ou mais topologias</li>
+                        <li>• Flexibilidade de design</li>
+                        <li>• Otimizada para necessidades específicas</li>
+                        <li>• Mais complexa de gerenciar</li>
+                    </ul>
+                    <div class="dark-card p-3 rounded-lg text-sm">
+                        <strong class="text-teal-300">Exemplo:</strong> <span class="dark-text-secondary">Estrela + Anel</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Segurança de Redes -->
+    <section id="seguranca" class="py-20 bg-gray-800">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 dark-text neon-text">🔒 Segurança de Redes</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="tech-card p-8 rounded-xl shadow-lg">
+                    <h3 class="text-3xl font-bold text-red-400 mb-6">🛡️ Ameaças Comuns</h3>
+                    <div class="space-y-4">
+                        <div class="dark-card p-4 rounded-lg">
+                            <h4 class="font-bold text-red-300 mb-2">Malware</h4>
+                            <p class="text-sm dark-text-secondary">Vírus, worms, trojans e ransomware que infectam sistemas</p>
+                        </div>
+                        <div class="dark-card p-4 rounded-lg">
+                            <h4 class="font-bold text-red-300 mb-2">Ataques DDoS</h4>
+                            <p class="text-sm dark-text-secondary">Sobrecarga de servidores com tráfego malicioso</p>
+                        </div>
+                        <div class="dark-card p-4 rounded-lg">
+                            <h4 class="font-bold text-red-300 mb-2">Phishing</h4>
+                            <p class="text-sm dark-text-secondary">Engenharia social para roubar credenciais</p>
+                        </div>
+                        <div class="dark-card p-4 rounded-lg">
+                            <h4 class="font-bold text-red-300 mb-2">Man-in-the-Middle</h4>
+                            <p class="text-sm dark-text-secondary">Interceptação de comunicações</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-card p-8 rounded-xl shadow-lg">
+                    <h3 class="text-3xl font-bold text-green-400 mb-6">🔐 Medidas de Proteção</h3>
+                    <div class="space-y-4">
+                        <div class="dark-card p-4 rounded-lg">
+                            <h4 class="font-bold text-green-300 mb-2">Firewall</h4>
+                            <p class="text-sm dark-text-secondary">Filtragem de tráfego baseada em regras</p>
+                        </div>
+                        <div class="dark-card p-4 rounded-lg">
+                            <h4 class="font-bold text-green-300 mb-2">VPN</h4>
+                            <p class="text-sm dark-text-secondary">Túneis criptografados para conexões seguras</p>
+                        </div>
+                        <div class="dark-card p-4 rounded-lg">
+                            <h4 class="font-bold text-green-300 mb-2">IDS/IPS</h4>
+                            <p class="text-sm dark-text-secondary">Detecção e prevenção de intrusões</p>
+                        </div>
+                        <div class="dark-card p-4 rounded-lg">
+                            <h4 class="font-bold text-green-300 mb-2">Criptografia</h4>
+                            <p class="text-sm dark-text-secondary">Proteção de dados em trânsito e repouso</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="max-w-4xl mx-auto">
-                <h3 class="text-3xl font-bold text-center mb-8 text-gray-800">🚀 Tecnologias Emergentes</h3>
+            <div class="dark-card p-8 rounded-xl shadow-lg">
+                <h4 class="text-2xl font-bold text-center mb-8 dark-text">🔧 Ferramentas de Segurança</h4>
                 
-                <div class="space-y-6">
-                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
-                        <h4 class="text-2xl font-bold text-purple-600 mb-4">🌐 6G - A Próxima Revolução</h4>
-                        <p class="text-gray-700 mb-4">Esperado para 2030, o 6G promete velocidades de até 1 Tbps, latência de menos de 1ms e conectividade holográfica!</p>
-                        <div class="grid md:grid-cols-3 gap-4 mt-4">
-                            <div class="bg-purple-50 p-4 rounded-lg text-center">
-                                <div class="text-2xl mb-2">⚡</div>
-                                <strong>100x mais rápido que 5G</strong>
-                            </div>
-                            <div class="bg-purple-50 p-4 rounded-lg text-center">
-                                <div class="text-2xl mb-2">🤖</div>
-                                <strong>IA integrada na rede</strong>
-                            </div>
-                            <div class="bg-purple-50 p-4 rounded-lg text-center">
-                                <div class="text-2xl mb-2">🌍</div>
-                                <strong>Cobertura global via satélite</strong>
-                            </div>
-                        </div>
+                <div class="grid md:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🔥</div>
+                        <h5 class="font-bold text-orange-400 mb-2">Firewall</h5>
+                        <p class="text-sm dark-text-secondary">pfSense, iptables, Windows Firewall</p>
                     </div>
-
-                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
-                        <h4 class="text-2xl font-bold text-blue-600 mb-4">🔮 Computação Quântica em Redes</h4>
-                        <p class="text-gray-700 mb-4">Redes quânticas permitirão comunicação ultra-segura e processamento distribuído impossível de hackear!</p>
-                        <div class="bg-blue-50 p-4 rounded-lg">
-                            <strong>Impacto:</strong> Revolucionará criptografia, simulações científicas e inteligência artificial
-                        </div>
+                    
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🕵️</div>
+                        <h5 class="font-bold text-blue-400 mb-2">Monitoramento</h5>
+                        <p class="text-sm dark-text-secondary">Wireshark, Nagios, Zabbix</p>
                     </div>
-
-                    <div class="tech-card bg-white p-6 rounded-xl shadow-lg">
-                        <h4 class="text-2xl font-bold text-green-600 mb-4">🌱 Redes Sustentáveis</h4>
-                        <p class="text-gray-700 mb-4">Data centers consomem 1% da energia mundial. Novas tecnologias buscam reduzir esse impacto com IA e energia renovável.</p>
-                        <div class="bg-green-50 p-4 rounded-lg">
-                            <strong>Meta:</strong> Neutralidade de carbono até 2030 para grandes provedores de nuvem
-                        </div>
+                    
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🔐</div>
+                        <h5 class="font-bold text-purple-400 mb-2">VPN</h5>
+                        <p class="text-sm dark-text-secondary">OpenVPN, WireGuard, IPSec</p>
+                    </div>
+                    
+                    <div class="text-center">
+                        <div class="text-4xl mb-3">🛡️</div>
+                        <h5 class="font-bold text-green-400 mb-2">Antivírus</h5>
+                        <p class="text-sm dark-text-secondary">ClamAV, Defender, Kaspersky</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="text-center mt-12">
-                <button onclick="showNetworkQuiz()" id="quizBtn" class="interactive-btn bg-gradient-to-r from-pink-500 to-purple-600 text-white px-8 py-4 rounded-full font-semibold">
-                    🧠 Teste Seus Conhecimentos
+    <!-- Material de Estudo -->
+    <section id="estudos" class="py-20 dark-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 dark-text neon-text">📚 Material de Estudo</h2>
+            <p class="text-center text-lg dark-text-secondary mb-12 max-w-3xl mx-auto">
+                Estude os conceitos fundamentais organizados por nível de dificuldade. Cada seção contém explicações detalhadas dos tópicos que aparecem no quiz.
+            </p>
+            
+            <!-- Tabs de Níveis -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="showStudyLevel('iniciante')" class="study-tab dark-card px-6 py-3 rounded-full border border-gray-600 active" id="tab-iniciante">
+                    🌱 Iniciante
+                </button>
+                <button onclick="showStudyLevel('basico')" class="study-tab dark-card px-6 py-3 rounded-full border border-gray-600" id="tab-basico">
+                    📚 Básico
+                </button>
+                <button onclick="showStudyLevel('intermediario')" class="study-tab dark-card px-6 py-3 rounded-full border border-gray-600" id="tab-intermediario">
+                    ⚡ Intermediário
+                </button>
+                <button onclick="showStudyLevel('avancado')" class="study-tab dark-card px-6 py-3 rounded-full border border-gray-600" id="tab-avancado">
+                    🔥 Avançado
                 </button>
             </div>
 
-            <div id="networkQuiz" class="hidden max-w-2xl mx-auto mt-8 bg-white p-8 rounded-xl shadow-lg">
-                <h4 class="text-2xl font-bold text-center mb-6">Quiz de Redes</h4>
-                <div id="quizContent">
-                    <div class="quiz-question mb-6">
-                        <p class="text-lg mb-4"><strong>1.</strong> Qual foi a primeira rede de computadores de longa distância?</p>
-                        <div class="space-y-2">
-                            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left p-3 bg-gray-100 rounded-lg hover:bg-gray-200">a) Internet</button>
-                            <button onclick="checkAnswer(this, true)" class="quiz-option w-full text-left p-3 bg-gray-100 rounded-lg hover:bg-gray-200">b) ARPANET</button>
-                            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left p-3 bg-gray-100 rounded-lg hover:bg-gray-200">c) Ethernet</button>
-                            <button onclick="checkAnswer(this, false)" class="quiz-option w-full text-left p-3 bg-gray-100 rounded-lg hover:bg-gray-200">d) TCP/IP</button>
+            <!-- Conteúdo Iniciante -->
+            <div id="study-iniciante" class="study-content active">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl font-bold text-green-400 mb-4">🌱 Nível Iniciante</h3>
+                        <p class="text-lg dark-text-secondary">Conceitos fundamentais para quem está começando no mundo das redes</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- World Wide Web -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-blue-400 mb-4">🌐 World Wide Web (WWW)</h4>
+                            <div class="space-y-4">
+                                <div class="highlight-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">WWW = World Wide Web</p>
+                                    <p class="text-blue-200 text-sm mt-2">A rede mundial de computadores que conhecemos como "internet"</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    A World Wide Web é um sistema de documentos interligados que funciona sobre a internet. 
+                                    Foi criada por Tim Berners-Lee em 1989 no CERN.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Páginas web:</strong> Documentos HTML conectados por links</li>
+                                    <li>• <strong>URLs:</strong> Endereços únicos para cada página</li>
+                                    <li>• <strong>Navegadores:</strong> Programas para acessar a web</li>
+                                    <li>• <strong>Servidores web:</strong> Computadores que hospedam sites</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- HTTP -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-green-400 mb-4">🌍 Protocolo HTTP</h4>
+                            <div class="space-y-4">
+                                <div class="success-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">HTTP = HyperText Transfer Protocol</p>
+                                    <p class="text-green-200 text-sm mt-2">O protocolo usado para navegar na internet</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    HTTP é como os navegadores "conversam" com os servidores web para buscar páginas, 
+                                    imagens e outros recursos da internet.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Requisição:</strong> Navegador pede uma página</li>
+                                    <li>• <strong>Resposta:</strong> Servidor envia a página</li>
+                                    <li>• <strong>HTTPS:</strong> Versão segura com criptografia</li>
+                                    <li>• <strong>Porta 80:</strong> Porta padrão do HTTP</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Endereço IP -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-purple-400 mb-4">🏠 Endereço IP</h4>
+                            <div class="space-y-4">
+                                <div class="info-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">IP = Internet Protocol</p>
+                                    <p class="text-purple-200 text-sm mt-2">Como o "endereço de casa" de cada dispositivo na rede</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    Cada dispositivo conectado à internet tem um endereço IP único, 
+                                    como um endereço postal que permite localizar e enviar dados.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Formato:</strong> 4 números separados por pontos (ex: 192.168.1.1)</li>
+                                    <li>• <strong>IPv4:</strong> Versão mais comum (32 bits)</li>
+                                    <li>• <strong>IPv6:</strong> Versão mais nova (128 bits)</li>
+                                    <li>• <strong>Público vs Privado:</strong> IPs para internet vs rede local</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Switch -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-orange-400 mb-4">🔗 Switch de Rede</h4>
+                            <div class="space-y-4">
+                                <div class="warning-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">Switch = Comutador Inteligente</p>
+                                    <p class="text-orange-200 text-sm mt-2">Conecta vários dispositivos em uma rede local</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    O switch é como um "diretor de tráfego" que conecta computadores, 
+                                    impressoras e outros dispositivos em uma rede local (LAN).
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Múltiplas portas:</strong> Conecta vários dispositivos</li>
+                                    <li>• <strong>Aprendizado:</strong> Memoriza endereços MAC</li>
+                                    <li>• <strong>Eficiência:</strong> Envia dados só para o destinatário</li>
+                                    <li>• <strong>Diferença do Hub:</strong> Mais inteligente e rápido</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Wi-Fi -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-teal-400 mb-4">📶 Wi-Fi</h4>
+                            <div class="space-y-4">
+                                <div class="highlight-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">Wi-Fi = Wireless Fidelity</p>
+                                    <p class="text-blue-200 text-sm mt-2">Tecnologia de rede sem fio</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    Wi-Fi permite conectar dispositivos à internet sem cabos, 
+                                    usando ondas de rádio para transmitir dados.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Sem fios:</strong> Conexão através de ondas de rádio</li>
+                                    <li>• <strong>Roteador Wi-Fi:</strong> Dispositivo que cria a rede sem fio</li>
+                                    <li>• <strong>SSID:</strong> Nome da rede Wi-Fi</li>
+                                    <li>• <strong>Senha:</strong> Proteção da rede (WPA2/WPA3)</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Modem -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-red-400 mb-4">📡 Modem</h4>
+                            <div class="space-y-4">
+                                <div class="warning-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">Modem = Modulador/Demodulador</p>
+                                    <p class="text-orange-200 text-sm mt-2">Ponte entre sua casa e a internet</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    O modem conecta sua rede doméstica à internet do seu provedor (ISP), 
+                                    convertendo sinais digitais em analógicos e vice-versa.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Conexão ISP:</strong> Liga sua casa à internet</li>
+                                    <li>• <strong>Tipos:</strong> ADSL, Cable, Fibra óptica</li>
+                                    <li>• <strong>Diferença do Roteador:</strong> Modem conecta à internet</li>
+                                    <li>• <strong>Velocidade:</strong> Depende do plano contratado</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
+
+                    <div class="mt-12 text-center">
+                        <button onclick="scrollToSection('quiz')" class="interactive-btn text-white px-8 py-4 rounded-full font-semibold">
+                            🧠 Fazer Quiz
+                        </button>
+                    </div>
                 </div>
-                <div id="quizResult" class="hidden text-center">
-                    <div class="text-4xl mb-4">🎉</div>
-                    <p class="text-xl font-semibold">Parabéns! Você acertou!</p>
-                    <p class="text-gray-600 mt-2">ARPANET foi criada em 1962 e foi o precursor da Internet moderna.</p>
+            </div>
+
+            <!-- Conteúdo Básico -->
+            <div id="study-basico" class="study-content">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl font-bold text-blue-400 mb-4">📚 Nível Básico</h3>
+                        <p class="text-lg dark-text-secondary">Protocolos fundamentais e conceitos de rede essenciais</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- DNS -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-blue-400 mb-4">🔍 Sistema DNS</h4>
+                            <div class="space-y-4">
+                                <div class="highlight-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">DNS = Domain Name System</p>
+                                    <p class="text-blue-200 text-sm mt-2">Traduz nomes em endereços IP</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    O DNS é como uma "agenda telefônica" da internet, convertendo nomes de sites 
+                                    (como google.com) em endereços IP que os computadores entendem.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Resolução:</strong> google.com → 142.250.191.14</li>
+                                    <li>• <strong>Hierarquia:</strong> Servidores raiz, TLD, autoritativos</li>
+                                    <li>• <strong>Cache:</strong> Armazena respostas para acelerar</li>
+                                    <li>• <strong>Tipos de registro:</strong> A, CNAME, MX, NS</li>
+                                </ul>
+                                <div class="success-box p-3 rounded-lg mt-4">
+                                    <p class="text-green-200 text-sm">💡 Sem DNS, teríamos que decorar endereços IP!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- HTTPS -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-green-400 mb-4">🔒 HTTPS Seguro</h4>
+                            <div class="space-y-4">
+                                <div class="success-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">HTTPS = HTTP + SSL/TLS</p>
+                                    <p class="text-green-200 text-sm mt-2">HTTP com criptografia de segurança</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    HTTPS é a versão segura do HTTP, que criptografa todos os dados 
+                                    transmitidos entre seu navegador e o servidor web.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Porta 443:</strong> Porta padrão do HTTPS</li>
+                                    <li>• <strong>Certificado SSL:</strong> Valida identidade do site</li>
+                                    <li>• <strong>Criptografia:</strong> Protege dados em trânsito</li>
+                                    <li>• <strong>Cadeado:</strong> Ícone de segurança no navegador</li>
+                                </ul>
+                                <div class="warning-box p-3 rounded-lg mt-4">
+                                    <p class="text-orange-200 text-sm">⚠️ Nunca digite senhas em sites HTTP!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- VPN -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-purple-400 mb-4">🔐 Rede VPN</h4>
+                            <div class="space-y-4">
+                                <div class="info-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">VPN = Virtual Private Network</p>
+                                    <p class="text-purple-200 text-sm mt-2">Túnel seguro através da internet</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    VPN cria um "túnel" criptografado entre seu dispositivo e um servidor remoto, 
+                                    protegendo sua privacidade e permitindo acesso seguro a redes privadas.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Criptografia:</strong> Protege dados em trânsito</li>
+                                    <li>• <strong>Anonimato:</strong> Oculta seu IP real</li>
+                                    <li>• <strong>Acesso remoto:</strong> Conecta à rede da empresa</li>
+                                    <li>• <strong>Protocolos:</strong> OpenVPN, IPSec, WireGuard</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Topologia Estrela -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-orange-400 mb-4">⭐ Topologia Estrela</h4>
+                            <div class="space-y-4">
+                                <div class="warning-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">Star Topology</p>
+                                    <p class="text-orange-200 text-sm mt-2">Todos os dispositivos conectados a um ponto central</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    Na topologia estrela, todos os dispositivos se conectam a um hub ou switch central, 
+                                    formando uma configuração em formato de estrela.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Hub central:</strong> Ponto único de conexão</li>
+                                    <li>• <strong>Fácil gerenciamento:</strong> Simples de instalar e manter</li>
+                                    <li>• <strong>Isolamento de falhas:</strong> Problema em um cabo não afeta outros</li>
+                                    <li>• <strong>Ponto único de falha:</strong> Se o hub falhar, toda rede para</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Firewall -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-red-400 mb-4">🔥 Firewall</h4>
+                            <div class="space-y-4">
+                                <div class="warning-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">Firewall = Parede de Fogo</p>
+                                    <p class="text-orange-200 text-sm mt-2">Filtro de segurança para tráfego de rede</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    Firewall é um sistema de segurança que monitora e controla o tráfego de rede, 
+                                    bloqueando conexões maliciosas e permitindo apenas tráfego autorizado.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Regras:</strong> Define o que pode passar ou não</li>
+                                    <li>• <strong>Portas:</strong> Controla quais serviços são acessíveis</li>
+                                    <li>• <strong>Tipos:</strong> Software, hardware, baseado em nuvem</li>
+                                    <li>• <strong>Logs:</strong> Registra tentativas de acesso</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- DDoS -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-red-500 mb-4">⚡ Ataques DDoS</h4>
+                            <div class="space-y-4">
+                                <div class="warning-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">DDoS = Distributed Denial of Service</p>
+                                    <p class="text-orange-200 text-sm mt-2">Ataque de negação de serviço distribuído</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    DDoS é um ataque que sobrecarrega servidores com tráfego malicioso vindo de 
+                                    múltiplas fontes, tornando o serviço indisponível para usuários legítimos.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Botnet:</strong> Rede de computadores infectados</li>
+                                    <li>• <strong>Sobrecarga:</strong> Mais requisições do que o servidor suporta</li>
+                                    <li>• <strong>Tipos:</strong> Volumétrico, protocolo, aplicação</li>
+                                    <li>• <strong>Proteção:</strong> CDN, rate limiting, firewalls</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 text-center">
+                        <button onclick="scrollToSection('quiz')" class="interactive-btn text-white px-8 py-4 rounded-full font-semibold">
+                            🧠 Fazer Quiz
+                        </button>
+                    </div>
                 </div>
+            </div>
+
+            <!-- Conteúdo Intermediário -->
+            <div id="study-intermediario" class="study-content">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl font-bold text-orange-400 mb-4">⚡ Nível Intermediário</h3>
+                        <p class="text-lg dark-text-secondary">Conceitos avançados de roteamento, protocolos e segurança</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- Modelo OSI -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-blue-400 mb-4">🏗️ Modelo OSI</h4>
+                            <div class="space-y-4">
+                                <div class="highlight-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">OSI = Open Systems Interconnection</p>
+                                    <p class="text-blue-200 text-sm mt-2">7 camadas de comunicação em rede</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    O modelo OSI divide a comunicação de rede em 7 camadas, cada uma com 
+                                    responsabilidades específicas. TCP opera na camada 4 (Transporte).
+                                </p>
+                                <div class="space-y-2">
+                                    <div class="dark-card p-2 rounded text-sm">
+                                        <strong class="text-purple-400">7. Aplicação:</strong> <span class="dark-text-secondary">HTTP, FTP, SMTP</span>
+                                    </div>
+                                    <div class="dark-card p-2 rounded text-sm">
+                                        <strong class="text-purple-400">6. Apresentação:</strong> <span class="dark-text-secondary">Criptografia, compressão</span>
+                                    </div>
+                                    <div class="dark-card p-2 rounded text-sm">
+                                        <strong class="text-purple-400">5. Sessão:</strong> <span class="dark-text-secondary">Controle de sessões</span>
+                                    </div>
+                                    <div class="dark-card p-2 rounded text-sm bg-orange-900">
+                                        <strong class="text-orange-300">4. Transporte:</strong> <span class="text-orange-200">TCP, UDP</span>
+                                    </div>
+                                    <div class="dark-card p-2 rounded text-sm">
+                                        <strong class="text-purple-400">3. Rede:</strong> <span class="dark-text-secondary">IP, roteamento</span>
+                                    </div>
+                                    <div class="dark-card p-2 rounded text-sm">
+                                        <strong class="text-purple-400">2. Enlace:</strong> <span class="dark-text-secondary">Ethernet, Wi-Fi</span>
+                                    </div>
+                                    <div class="dark-card p-2 rounded text-sm">
+                                        <strong class="text-purple-400">1. Física:</strong> <span class="dark-text-secondary">Cabos, sinais</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SFTP -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-green-400 mb-4">🔒 SFTP Seguro</h4>
+                            <div class="space-y-4">
+                                <div class="success-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">SFTP = SSH File Transfer Protocol</p>
+                                    <p class="text-green-200 text-sm mt-2">Transferência segura de arquivos</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    SFTP é a versão segura do FTP, usando criptografia SSH para proteger 
+                                    a transferência de arquivos entre computadores.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Porta 22:</strong> Usa a mesma porta do SSH</li>
+                                    <li>• <strong>Criptografia:</strong> Todos os dados são criptografados</li>
+                                    <li>• <strong>Autenticação:</strong> Usuário/senha ou chaves públicas</li>
+                                    <li>• <strong>Diferença do FTP:</strong> FTP transmite dados em texto claro</li>
+                                </ul>
+                                <div class="warning-box p-3 rounded-lg mt-4">
+                                    <p class="text-orange-200 text-sm">⚠️ FTP comum não é seguro para dados sensíveis!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Redes Classe C -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-purple-400 mb-4">🏠 Redes Classe C</h4>
+                            <div class="space-y-4">
+                                <div class="info-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">Classe C = /24 ou 255.255.255.0</p>
+                                    <p class="text-purple-200 text-sm mt-2">Redes pequenas com até 254 hosts</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    Redes Classe C são comuns em residências e pequenas empresas, 
+                                    permitindo conectar até 254 dispositivos.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Faixa:</strong> 192.0.0.0 a 223.255.255.255</li>
+                                    <li>• <strong>Máscara:</strong> 255.255.255.0 (/24)</li>
+                                    <li>• <strong>Hosts:</strong> 254 endereços úteis (256 - 2)</li>
+                                    <li>• <strong>Exemplo:</strong> 192.168.1.0/24</li>
+                                </ul>
+                                <div class="highlight-box p-3 rounded-lg mt-4">
+                                    <p class="text-blue-200 text-sm">💡 Subtraímos 2: um para rede e um para broadcast</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- NTP -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-orange-400 mb-4">⏰ Protocolo NTP</h4>
+                            <div class="space-y-4">
+                                <div class="warning-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">NTP = Network Time Protocol</p>
+                                    <p class="text-orange-200 text-sm mt-2">Sincronização de relógios em rede</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    NTP mantém todos os dispositivos da rede com o mesmo horário, 
+                                    essencial para logs, certificados e aplicações distribuídas.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Porta 123:</strong> Porta padrão do NTP</li>
+                                    <li>• <strong>Hierarquia:</strong> Servidores stratum 0, 1, 2...</li>
+                                    <li>• <strong>Precisão:</strong> Milissegundos de precisão</li>
+                                    <li>• <strong>Importância:</strong> Logs, segurança, aplicações</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- NAT -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-teal-400 mb-4">🔄 NAT Translation</h4>
+                            <div class="space-y-4">
+                                <div class="highlight-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">NAT = Network Address Translation</p>
+                                    <p class="text-blue-200 text-sm mt-2">Tradução entre IPs privados e públicos</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    NAT permite que múltiplos dispositivos com IPs privados compartilhem 
+                                    um único IP público para acessar a internet.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>IP Privado:</strong> 192.168.x.x, 10.x.x.x, 172.16-31.x.x</li>
+                                    <li>• <strong>IP Público:</strong> Endereço único na internet</li>
+                                    <li>• <strong>Tabela NAT:</strong> Mapeia conexões internas/externas</li>
+                                    <li>• <strong>Economia:</strong> Reduz necessidade de IPs públicos</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- TCP vs UDP -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-red-400 mb-4">⚖️ TCP vs UDP</h4>
+                            <div class="space-y-4">
+                                <div class="warning-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">Protocolos de Transporte</p>
+                                    <p class="text-orange-200 text-sm mt-2">Confiabilidade vs Velocidade</p>
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="success-box p-4 rounded-lg">
+                                        <h5 class="font-bold text-green-300 mb-2">TCP - Confiável</h5>
+                                        <ul class="text-sm text-green-200 space-y-1">
+                                            <li>• Garante entrega</li>
+                                            <li>• Controle de fluxo</li>
+                                            <li>• Correção de erros</li>
+                                            <li>• Mais lento</li>
+                                        </ul>
+                                    </div>
+                                    <div class="info-box p-4 rounded-lg">
+                                        <h5 class="font-bold text-purple-300 mb-2">UDP - Rápido</h5>
+                                        <ul class="text-sm text-purple-200 space-y-1">
+                                            <li>• Sem garantias</li>
+                                            <li>• Sem controle</li>
+                                            <li>• Pode perder dados</li>
+                                            <li>• Mais rápido</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <p class="dark-text-secondary text-sm">
+                                    <strong>TCP:</strong> Navegação web, email, transferência de arquivos<br>
+                                    <strong>UDP:</strong> Jogos online, streaming de vídeo, DNS
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 text-center">
+                        <button onclick="scrollToSection('quiz')" class="interactive-btn text-white px-8 py-4 rounded-full font-semibold">
+                            🧠 Fazer Quiz
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Conteúdo Avançado -->
+            <div id="study-avancado" class="study-content">
+                <div class="max-w-6xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h3 class="text-3xl font-bold text-red-400 mb-4">🔥 Nível Avançado</h3>
+                        <p class="text-lg dark-text-secondary">Tecnologias complexas e protocolos de roteamento avançados</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <!-- OSPF e Dijkstra -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-blue-400 mb-4">🗺️ OSPF e Dijkstra</h4>
+                            <div class="space-y-4">
+                                <div class="highlight-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">OSPF = Open Shortest Path First</p>
+                                    <p class="text-blue-200 text-sm mt-2">Protocolo de roteamento link-state</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    OSPF usa o algoritmo de Dijkstra para calcular o caminho mais curto 
+                                    entre redes, considerando a topologia completa da rede.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Algoritmo de Dijkstra:</strong> Encontra caminho mais curto</li>
+                                    <li>• <strong>Link-State:</strong> Conhece toda a topologia</li>
+                                    <li>• <strong>Áreas:</strong> Divide rede em zonas menores</li>
+                                    <li>• <strong>LSA:</strong> Link State Advertisements</li>
+                                </ul>
+                                <div class="success-box p-3 rounded-lg mt-4">
+                                    <p class="text-green-200 text-sm">💡 Dijkstra é usado em GPS e redes sociais também!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- BGP e AS -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-green-400 mb-4">🌐 BGP e Autonomous Systems</h4>
+                            <div class="space-y-4">
+                                <div class="success-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">BGP = Border Gateway Protocol</p>
+                                    <p class="text-green-200 text-sm mt-2">Protocolo de roteamento da internet</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    BGP conecta diferentes Autonomous Systems (AS) - grupos de redes 
+                                    sob uma única administração técnica, como ISPs ou grandes empresas.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>AS (Sistema Autônomo):</strong> Grupo de redes sob mesma administração</li>
+                                    <li>• <strong>eBGP:</strong> Entre diferentes AS</li>
+                                    <li>• <strong>iBGP:</strong> Dentro do mesmo AS</li>
+                                    <li>• <strong>Path Vector:</strong> Evita loops usando caminho completo</li>
+                                </ul>
+                                <div class="warning-box p-3 rounded-lg mt-4">
+                                    <p class="text-orange-200 text-sm">⚠️ BGP é crítico - falhas podem derrubar a internet!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- MPLS -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-purple-400 mb-4">🏷️ MPLS Labels</h4>
+                            <div class="space-y-4">
+                                <div class="info-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">MPLS = Multi-Protocol Label Switching</p>
+                                    <p class="text-purple-200 text-sm mt-2">Roteamento baseado em labels</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    MPLS usa labels (etiquetas) para encaminhar pacotes rapidamente, 
+                                    sem precisar analisar o cabeçalho IP completo em cada roteador.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Labels:</strong> Etiquetas de 20 bits para roteamento rápido</li>
+                                    <li>• <strong>LSP:</strong> Label Switched Path - caminho pré-definido</li>
+                                    <li>• <strong>QoS:</strong> Qualidade de serviço garantida</li>
+                                    <li>• <strong>VPN:</strong> Criação de redes privadas virtuais</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- VXLAN -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-orange-400 mb-4">☁️ VXLAN Overlay</h4>
+                            <div class="space-y-4">
+                                <div class="warning-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">VXLAN = Virtual eXtensible LAN</p>
+                                    <p class="text-orange-200 text-sm mt-2">Tecnologia de overlay para data centers</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    VXLAN cria redes virtuais (overlay) sobre infraestrutura IP existente, 
+                                    permitindo até 16 milhões de redes virtuais.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Overlay:</strong> Rede virtual sobre rede física</li>
+                                    <li>• <strong>VNI:</strong> VXLAN Network Identifier (24 bits)</li>
+                                    <li>• <strong>VTEP:</strong> VXLAN Tunnel Endpoint</li>
+                                    <li>• <strong>Escalabilidade:</strong> Supera limite de 4096 VLANs</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- SDN -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-teal-400 mb-4">🧠 Software Defined Networking</h4>
+                            <div class="space-y-4">
+                                <div class="highlight-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">SDN = Software Defined Networking</p>
+                                    <p class="text-blue-200 text-sm mt-2">Separação entre controle e dados</p>
+                                </div>
+                                <p class="dark-text-secondary">
+                                    SDN separa o plano de controle (decisões de roteamento) do plano de dados 
+                                    (encaminhamento de pacotes), centralizando a inteligência da rede.
+                                </p>
+                                <ul class="space-y-2 dark-text-secondary">
+                                    <li>• <strong>Controlador:</strong> Cérebro centralizado da rede</li>
+                                    <li>• <strong>OpenFlow:</strong> Protocolo de comunicação</li>
+                                    <li>• <strong>Programabilidade:</strong> Rede configurada por software</li>
+                                    <li>• <strong>Flexibilidade:</strong> Mudanças rápidas de configuração</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- IPv6 -->
+                        <div class="concept-card p-6 rounded-xl">
+                            <h4 class="text-2xl font-bold text-red-400 mb-4">🆕 IPv6 vs IPv4</h4>
+                            <div class="space-y-4">
+                                <div class="warning-box p-4 rounded-lg">
+                                    <p class="text-white font-semibold">IPv6 = Internet Protocol version 6</p>
+                                    <p class="text-orange-200 text-sm mt-2">Nova geração de endereçamento IP</p>
+                                </div>
+                                <div class="grid md:grid-cols-2 gap-4">
+                                    <div class="dark-card p-4 rounded-lg">
+                                        <h5 class="font-bold text-red-300 mb-2">IPv4 (32 bits)</h5>
+                                        <ul class="text-sm dark-text-secondary space-y-1">
+                                            <li>• 4.3 bilhões de endereços</li>
+                                            <li>• 192.168.1.1</li>
+                                            <li>• Esgotamento de endereços</li>
+                                            <li>• NAT necessário</li>
+                                        </ul>
+                                    </div>
+                                    <div class="success-box p-4 rounded-lg">
+                                        <h5 class="font-bold text-green-300 mb-2">IPv6 (128 bits)</h5>
+                                        <ul class="text-sm text-green-200 space-y-1">
+                                            <li>• 340 undecilhões de endereços</li>
+                                            <li>• 2001:db8::1</li>
+                                            <li>• Endereços para todos</li>
+                                            <li>• NAT desnecessário</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="info-box p-3 rounded-lg mt-4">
+                                    <p class="text-purple-200 text-sm">💡 IPv6 tem endereços suficientes para cada átomo na Terra!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 text-center">
+                        <button onclick="scrollToSection('quiz')" class="interactive-btn text-white px-8 py-4 rounded-full font-semibold">
+                            🧠 Fazer Quiz
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Interativo -->
+    <section id="quiz" class="py-20 dark-section">
+        <div class="container mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-16 dark-text neon-text">🧠 Quiz: Teste seus Conhecimentos</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <!-- Tela Inicial do Quiz -->
+                <div id="quizHome" class="dark-card p-8 rounded-xl shadow-lg text-center">
+                    <div class="text-6xl mb-6">🎯</div>
+                    <h3 class="text-3xl font-bold text-purple-400 mb-6">Desafio TechRedes</h3>
+                    <p class="text-lg dark-text-secondary mb-8">
+                        Preencha seus dados e escolha o nível de dificuldade para começar o quiz!
+                    </p>
+                    
+                    <!-- Formulário de Dados Pessoais -->
+                    <form id="userInfoForm" class="max-w-2xl mx-auto mb-8">
+                        <div class="grid md:grid-cols-2 gap-6 mb-6">
+                            <div class="text-left">
+                                <label for="userName" class="block text-sm font-medium text-gray-300 mb-2">Nome Completo *</label>
+                                <input type="text" id="userName" name="name" required 
+                                       class="dark-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                       placeholder="Digite seu nome completo">
+                            </div>
+                            
+                            <div class="text-left">
+                                <label for="userAge" class="block text-sm font-medium text-gray-300 mb-2">Idade *</label>
+                                <input type="number" id="userAge" name="age" required min="10" max="100"
+                                       class="dark-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                       placeholder="Sua idade">
+                            </div>
+                        </div>
+                        
+                        <div class="text-left mb-6">
+                            <label for="userPhone" class="block text-sm font-medium text-gray-300 mb-2">Telefone *</label>
+                            <input type="tel" id="userPhone" name="phone" required 
+                                   class="dark-input w-full px-4 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500"
+                                   placeholder="(11) 99999-9999">
+                        </div>
+                    </form>
+                    
+                    <div class="mb-6">
+                        <h4 class="text-xl font-bold text-white mb-4">Escolha o Nível de Dificuldade:</h4>
+                        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                            <div class="difficulty-card dark-card p-6 rounded-lg border border-green-500 hover:border-green-400 hover:scale-105 transition-all duration-300 cursor-pointer" data-level="iniciante">
+                                <div class="text-3xl mb-3">🌱</div>
+                                <h4 class="font-bold text-green-400 mb-2">Iniciante</h4>
+                                <p class="text-sm dark-text-secondary">Conceitos básicos</p>
+                                <div class="mt-3 text-xs text-green-300">8 questões</div>
+                            </div>
+                            
+                            <div class="difficulty-card dark-card p-6 rounded-lg border border-blue-500 hover:border-blue-400 hover:scale-105 transition-all duration-300 cursor-pointer" data-level="basico">
+                                <div class="text-3xl mb-3">📚</div>
+                                <h4 class="font-bold text-blue-400 mb-2">Básico</h4>
+                                <p class="text-sm dark-text-secondary">Protocolos essenciais</p>
+                                <div class="mt-3 text-xs text-blue-300">8 questões</div>
+                            </div>
+                            
+                            <div class="difficulty-card dark-card p-6 rounded-lg border border-orange-500 hover:border-orange-400 hover:scale-105 transition-all duration-300 cursor-pointer" data-level="intermediario">
+                                <div class="text-3xl mb-3">⚡</div>
+                                <h4 class="font-bold text-orange-400 mb-2">Intermediário</h4>
+                                <p class="text-sm dark-text-secondary">Roteamento avançado</p>
+                                <div class="mt-3 text-xs text-orange-300">8 questões</div>
+                            </div>
+                            
+                            <div class="difficulty-card dark-card p-6 rounded-lg border border-red-500 hover:border-red-400 hover:scale-105 transition-all duration-300 cursor-pointer" data-level="avancado">
+                                <div class="text-3xl mb-3">🔥</div>
+                                <h4 class="font-bold text-red-400 mb-2">Avançado</h4>
+                                <p class="text-sm dark-text-secondary">Tecnologias complexas</p>
+                                <div class="mt-3 text-xs text-red-300">8 questões</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="beginQuiz" class="interactive-btn text-white px-8 py-4 rounded-full font-semibold opacity-50 cursor-not-allowed" disabled>
+                        🚀 Começar Quiz
+                    </button>
+                    <p class="text-sm dark-text-secondary mt-4">Preencha todos os campos e selecione um nível para continuar</p>
+                </div>
+
+                <!-- Interface do Quiz -->
+                <div id="quizInterface" class="hidden">
+                    <!-- Status Bar -->
+                    <div class="flex flex-wrap justify-between items-center mb-8 gap-4">
+                        <div class="score-display px-6 py-3 rounded-full">
+                            <span class="font-bold text-white">🏆 Pontos: <span id="currentScore">0</span></span>
+                        </div>
+                        <div class="question-counter px-6 py-3 rounded-full">
+                            <span class="font-bold text-white">📊 <span id="questionNumber">1</span>/<span id="totalQuestions">8</span></span>
+                        </div>
+                        <div class="px-6 py-3 rounded-full" style="background: linear-gradient(145deg, #065f46, #047857); border: 2px solid #10b981;">
+                            <span class="font-bold text-white">🎯 <span id="levelName"></span></span>
+                        </div>
+                    </div>
+
+                    <!-- Progress Bar -->
+                    <div class="progress-bar-container h-4 mb-8">
+                        <div id="quizProgress" class="progress-bar h-full" style="width: 12.5%"></div>
+                    </div>
+
+                    <!-- Question Card -->
+                    <div id="questionCard" class="dark-card p-8 rounded-xl shadow-lg mb-8">
+                        <div id="questionContent">
+                            <!-- Conteúdo da questão será inserido aqui -->
+                        </div>
+                    </div>
+
+                    <!-- Quiz Controls -->
+                    <div class="text-center space-x-4">
+                        <button id="nextQuestion" class="interactive-btn text-white px-8 py-3 rounded-full font-semibold hidden">
+                            ➡️ Próxima
+                        </button>
+                        <button id="finishQuiz" class="interactive-btn text-white px-8 py-3 rounded-full font-semibold hidden">
+                            🏁 Finalizar
+                        </button>
+                        <button id="backToHome" class="bg-gray-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-gray-700 transition-colors">
+                            🏠 Voltar ao Início
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Results Screen -->
+                <div id="quizResults" class="hidden dark-card p-8 rounded-xl shadow-lg border border-purple-500">
+                    <div id="resultsContent" class="text-center">
+                        <!-- Resultados serão mostrados aqui -->
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="gradient-bg text-white py-12">
+    <footer class="gradient-bg text-white py-12 border-t border-gray-700">
         <div class="container mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-2xl font-bold mb-4">🌐 TechRedes</h3>
-                    <p class="text-purple-200">Explorando o fascinante mundo das redes de computadores, desde os fundamentos até as tecnologias mais avançadas.</p>
+                    <h3 class="text-2xl font-bold mb-4 neon-text">🌐 TechRedes</h3>
+                    <p class="text-blue-200">Explorando o fascinante universo das redes de computadores, desde protocolos fundamentais até tecnologias avançadas de conectividade.</p>
                 </div>
                 <div>
-                    <h4 class="text-xl font-semibold mb-4">📚 Recursos</h4>
-                    <ul class="space-y-2 text-purple-200">
+                    <h4 class="text-xl font-semibold mb-4 text-blue-300">📚 Conteúdo</h4>
+                    <ul class="space-y-2 text-blue-200">
                         <li>• História das Redes</li>
-                        <li>• Tipos de Redes</li>
-                        <li>• Sistemas Operacionais</li>
-                        <li>• Curiosidades Técnicas</li>
+                        <li>• Protocolos de Comunicação</li>
+                        <li>• Topologias de Rede</li>
+                        <li>• Segurança de Redes</li>
+                        <li>• Material de Estudo</li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-xl font-semibold mb-4">🚀 Tecnologias</h4>
-                    <ul class="space-y-2 text-purple-200">
-                        <li>• TCP/IP</li>
-                        <li>• Ethernet</li>
-                        <li>• WiFi & 5G</li>
-                        <li>• Fibra Ótica</li>
+                    <h4 class="text-xl font-semibold mb-4 text-blue-300">🔧 Tecnologias</h4>
+                    <ul class="space-y-2 text-blue-200">
+                        <li>• TCP/IP & HTTP/HTTPS</li>
+                        <li>• DNS & DHCP</li>
+                        <li>• Firewall & VPN</li>
+                        <li>• Wireless & Cloud</li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-purple-400 mt-8 pt-8 text-center text-purple-200">
-                <p>&copy; 2024 TechRedes. Desenvolvido com 💜 para entusiastas de tecnologia.</p>
+            <div class="border-t border-blue-700 mt-8 pt-8 text-center text-blue-200">
+                <p>&copy; TechRedes 2025. Desenvolvido por Henrique Nunes.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
-        document.getElementById('menuBtn').addEventListener('click', function() {
-            const mobileMenu = document.getElementById('mobileMenu');
-            mobileMenu.classList.toggle('hidden');
-        });
+        // Variáveis globais do quiz
+        let quizState = {
+            currentQuestion: 0,
+            score: 0,
+            answers: [],
+            startTime: null,
+            selectedLevel: '',
+            questions: [],
+            isActive: false,
+            userInfo: {
+                name: '',
+                age: '',
+                phone: ''
+            }
+        };
 
-        // Smooth scrolling
+        // Funções do modal de boas-vindas
+        function startExploration() {
+            closeWelcomeModal();
+            setTimeout(() => {
+                scrollToSection('historia');
+            }, 300);
+        }
+
+        function closeWelcomeModal() {
+            document.getElementById('welcomeModal').style.display = 'none';
+        }
+
+        function showWelcomeModal() {
+            document.getElementById('welcomeModal').style.display = 'flex';
+        }
+
+
+
+        // Funções de navegação
         function scrollToSection(sectionId) {
             document.getElementById(sectionId).scrollIntoView({
                 behavior: 'smooth'
             });
         }
 
-        // Timeline animation on scroll
+        // Banco de questões por nível
+        const quizQuestions = {
+            iniciante: [
+                {
+                    question: "O que significa WWW?",
+                    options: ["World Wide Web", "World Web Wide", "Wide World Web", "Web World Wide"],
+                    correct: 0,
+                    explanation: "WWW significa World Wide Web, a rede mundial de computadores que conhecemos como internet."
+                },
+                {
+                    question: "Qual protocolo é usado para navegar em sites?",
+                    options: ["FTP", "HTTP", "SMTP", "SSH"],
+                    correct: 1,
+                    explanation: "HTTP (HyperText Transfer Protocol) é o protocolo padrão para navegação web."
+                },
+                {
+                    question: "O que é um endereço IP?",
+                    options: ["Nome do site", "Identificador único na rede", "Tipo de cabo", "Software de rede"],
+                    correct: 1,
+                    explanation: "Endereço IP é um identificador único que cada dispositivo possui na rede."
+                },
+                {
+                    question: "Qual dispositivo conecta computadores em uma LAN?",
+                    options: ["Roteador", "Switch", "Modem", "Antena"],
+                    correct: 1,
+                    explanation: "Switch conecta múltiplos dispositivos em uma rede local (LAN)."
+                },
+                {
+                    question: "O que significa Wi-Fi?",
+                    options: ["Wireless Fidelity", "Wide Fidelity", "Web Fidelity", "Wire Free"],
+                    correct: 0,
+                    explanation: "Wi-Fi significa Wireless Fidelity, tecnologia de rede sem fio."
+                },
+                {
+                    question: "Para que serve um modem?",
+                    options: ["Conectar à internet", "Armazenar dados", "Proteger contra vírus", "Acelerar o PC"],
+                    correct: 0,
+                    explanation: "Modem conecta sua rede doméstica à internet do provedor (ISP)."
+                },
+                {
+                    question: "Qual porta padrão do HTTP?",
+                    options: ["21", "80", "443", "25"],
+                    correct: 1,
+                    explanation: "HTTP utiliza a porta 80 como padrão para comunicação web."
+                },
+                {
+                    question: "O que significa LAN?",
+                    options: ["Large Area Network", "Local Area Network", "Long Area Network", "Limited Access Network"],
+                    correct: 1,
+                    explanation: "LAN significa Local Area Network, uma rede de área local."
+                }
+            ],
+            basico: [
+                {
+                    question: "Qual protocolo traduz nomes em endereços IP?",
+                    options: ["HTTP", "DNS", "FTP", "SMTP"],
+                    correct: 1,
+                    explanation: "DNS (Domain Name System) converte nomes como 'google.com' em endereços IP."
+                },
+                {
+                    question: "Qual porta padrão do HTTPS?",
+                    options: ["80", "443", "21", "25"],
+                    correct: 1,
+                    explanation: "HTTPS usa a porta 443, enquanto HTTP usa a porta 80."
+                },
+                {
+                    question: "O que significa VPN?",
+                    options: ["Virtual Private Network", "Very Private Network", "Virtual Public Network", "Verified Private Network"],
+                    correct: 0,
+                    explanation: "VPN cria uma rede privada virtual segura através da internet."
+                },
+                {
+                    question: "Qual topologia conecta todos os dispositivos a um ponto central?",
+                    options: ["Barramento", "Anel", "Estrela", "Malha"],
+                    correct: 2,
+                    explanation: "Topologia estrela conecta todos os dispositivos a um hub ou switch central."
+                },
+                {
+                    question: "Qual a função principal de um firewall?",
+                    options: ["Acelerar conexão", "Filtrar tráfego", "Armazenar dados", "Traduzir endereços"],
+                    correct: 1,
+                    explanation: "Firewall filtra o tráfego de rede baseado em regras de segurança."
+                },
+                {
+                    question: "O que é um ataque DDoS?",
+                    options: ["Vírus malicioso", "Sobrecarga de tráfego", "Roubo de senhas", "Invasão física"],
+                    correct: 1,
+                    explanation: "DDoS sobrecarrega servidores com tráfego malicioso de múltiplas fontes."
+                },
+                {
+                    question: "Qual protocolo envia emails?",
+                    options: ["HTTP", "FTP", "SMTP", "DNS"],
+                    correct: 2,
+                    explanation: "SMTP (Simple Mail Transfer Protocol) é usado para enviar emails."
+                },
+                {
+                    question: "O que faz o DHCP?",
+                    options: ["Atribui IPs automaticamente", "Filtra spam", "Acelera internet", "Criptografa dados"],
+                    correct: 0,
+                    explanation: "DHCP atribui automaticamente endereços IP aos dispositivos da rede."
+                }
+            ],
+            intermediario: [
+                {
+                    question: "Em qual camada OSI opera o TCP?",
+                    options: ["Física", "Enlace", "Rede", "Transporte"],
+                    correct: 3,
+                    explanation: "TCP opera na camada de Transporte (camada 4) do modelo OSI."
+                },
+                {
+                    question: "Qual protocolo transfere arquivos com segurança?",
+                    options: ["FTP", "HTTP", "SFTP", "SMTP"],
+                    correct: 2,
+                    explanation: "SFTP adiciona criptografia SSH ao protocolo FTP tradicional."
+                },
+                {
+                    question: "Quantos hosts uma rede classe C suporta?",
+                    options: ["254", "256", "65534", "16777214"],
+                    correct: 0,
+                    explanation: "Rede classe C (/24) permite 254 hosts úteis (256 - 2 para rede e broadcast)."
+                },
+                {
+                    question: "Qual protocolo sincroniza relógios na rede?",
+                    options: ["SNMP", "NTP", "DHCP", "ARP"],
+                    correct: 1,
+                    explanation: "NTP (Network Time Protocol) mantém relógios sincronizados na rede."
+                },
+                {
+                    question: "O que faz o NAT?",
+                    options: ["Roteia pacotes", "Traduz endereços IP", "Filtra spam", "Criptografa dados"],
+                    correct: 1,
+                    explanation: "NAT traduz endereços IP privados para públicos e vice-versa."
+                },
+                {
+                    question: "Principal diferença entre TCP e UDP?",
+                    options: ["Velocidade", "Confiabilidade", "Segurança", "Compatibilidade"],
+                    correct: 1,
+                    explanation: "TCP garante entrega confiável, UDP é mais rápido mas sem garantias."
+                },
+                {
+                    question: "Qual é um protocolo de roteamento dinâmico?",
+                    options: ["OSPF", "HTTP", "FTP", "SMTP"],
+                    correct: 0,
+                    explanation: "OSPF atualiza automaticamente tabelas de roteamento baseado na topologia."
+                },
+                {
+                    question: "O que faz o protocolo ARP?",
+                    options: ["Resolve nomes", "Mapeia IP para MAC", "Roteia pacotes", "Criptografa dados"],
+                    correct: 1,
+                    explanation: "ARP resolve endereços IP em endereços MAC na rede local."
+                }
+            ],
+            avancado: [
+                {
+                    question: "Qual algoritmo o OSPF usa para calcular rotas?",
+                    options: ["Bellman-Ford", "Dijkstra", "Floyd-Warshall", "A*"],
+                    correct: 1,
+                    explanation: "OSPF utiliza o algoritmo de Dijkstra para encontrar caminhos mais curtos."
+                },
+                {
+                    question: "O que é um AS no BGP?",
+                    options: ["Tipo de roteador", "Grupo de redes sob mesma administração", "Protocolo de segurança", "Tipo de cabo"],
+                    correct: 1,
+                    explanation: "AS (Autonomous System) é um conjunto de redes sob administração única."
+                },
+                {
+                    question: "Diferença principal entre MPLS e roteamento IP?",
+                    options: ["Velocidade", "Uso de labels", "Segurança", "Custo"],
+                    correct: 1,
+                    explanation: "MPLS usa labels para encaminhamento rápido, sem análise completa do IP."
+                },
+                {
+                    question: "O que é VXLAN?",
+                    options: ["Protocolo de roteamento", "Tecnologia de overlay", "Tipo de firewall", "Protocolo de email"],
+                    correct: 1,
+                    explanation: "VXLAN cria redes virtuais (overlay) sobre infraestrutura IP existente."
+                },
+                {
+                    question: "O que caracteriza SDN?",
+                    options: ["Tipo de cabo", "Separação controle/dados", "Protocolo de segurança", "Sistema operacional"],
+                    correct: 1,
+                    explanation: "SDN separa o plano de controle do plano de dados na rede."
+                },
+                {
+                    question: "Diferença de bits entre IPv4 e IPv6?",
+                    options: ["32 vs 64 bits", "32 vs 128 bits", "64 vs 128 bits", "16 vs 32 bits"],
+                    correct: 1,
+                    explanation: "IPv4 usa 32 bits, IPv6 usa 128 bits para endereçamento."
+                },
+                {
+                    question: "O que é ECMP?",
+                    options: ["Protocolo de roteamento", "Balanceamento de carga", "Tipo de firewall", "Algoritmo de criptografia"],
+                    correct: 1,
+                    explanation: "ECMP distribui tráfego entre múltiplos caminhos de custo igual."
+                },
+                {
+                    question: "Função do protocolo LACP?",
+                    options: ["Roteamento", "Agregação de links", "Segurança", "DNS"],
+                    correct: 1,
+                    explanation: "LACP agrega múltiplos links físicos em um link lógico único."
+                }
+            ]
+        };
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeApp();
+        });
+
+        function initializeApp() {
+            setupEventListeners();
+            animateTimeline();
+            initializeQuiz();
+        }
+
+        // Event Listeners
+        function setupEventListeners() {
+            document.getElementById('menuBtn').addEventListener('click', toggleMobileMenu);
+            
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', handleSmoothScroll);
+            });
+            
+            window.addEventListener('scroll', animateTimeline);
+        }
+
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        function handleSmoothScroll(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+            document.getElementById('mobileMenu').classList.add('hidden');
+        }
+
+        // Animações da timeline
         function animateTimeline() {
             const timelineItems = document.querySelectorAll('.timeline-item');
-            timelineItems.forEach(item => {
+            
+            timelineItems.forEach((item, index) => {
                 const rect = item.getBoundingClientRect();
-                if (rect.top < window.innerHeight * 0.8) {
-                    item.classList.add('visible');
+                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (isVisible) {
+                    setTimeout(() => {
+                        item.classList.add('visible');
+                    }, index * 200);
                 }
             });
         }
 
-        window.addEventListener('scroll', animateTimeline);
-        animateTimeline(); // Initial check
-
-        // Show more history
-        function showMoreHistory() {
-            const moreHistory = document.getElementById('moreHistory');
-            const btn = document.getElementById('historyBtn');
-            
-            if (moreHistory.classList.contains('hidden')) {
-                moreHistory.classList.remove('hidden');
-                btn.textContent = '📖 Ver Menos';
-                setTimeout(() => {
-                    const newItems = moreHistory.querySelectorAll('.timeline-item');
-                    newItems.forEach(item => item.classList.add('visible'));
-                }, 100);
-            } else {
-                moreHistory.classList.add('hidden');
-                btn.textContent = '📖 Ver Mais Marcos Históricos';
-            }
-        }
-
-        // Network type tabs
-        function showNetworkType(type) {
-            // Hide all tab contents
-            document.querySelectorAll('.tab-content').forEach(content => {
+        // Funções do Material de Estudo
+        function showStudyLevel(level) {
+            document.querySelectorAll('.study-content').forEach(content => {
                 content.classList.remove('active');
             });
             
-            // Remove active class from all tabs
-            document.querySelectorAll('.network-tab').forEach(tab => {
-                tab.classList.remove('bg-blue-500', 'text-white');
-                tab.classList.add('bg-gray-300', 'text-gray-700');
+            document.querySelectorAll('.study-tab').forEach(tab => {
+                tab.classList.remove('active');
             });
             
-            // Show selected content
-            document.getElementById(type).classList.add('active');
-            
-            // Activate selected tab
-            event.target.classList.remove('bg-gray-300', 'text-gray-700');
-            event.target.classList.add('bg-blue-500', 'text-white');
+            document.getElementById(`study-${level}`).classList.add('active');
+            document.getElementById(`tab-${level}`).classList.add('active');
         }
 
-        // OS Comparison
-        function showOSComparison() {
-            const comparison = document.getElementById('osComparison');
-            const btn = document.getElementById('osComparisonBtn');
-            
-            if (comparison.classList.contains('hidden')) {
-                comparison.classList.remove('hidden');
-                btn.textContent = '📊 Ocultar Comparação';
-            } else {
-                comparison.classList.add('hidden');
-                btn.textContent = '📊 Comparar Sistemas Operacionais';
-            }
-        }
+        // === FUNÇÕES DO QUIZ ===
 
-        // Network Quiz
-        function showNetworkQuiz() {
-            const quiz = document.getElementById('networkQuiz');
-            const btn = document.getElementById('quizBtn');
-            
-            if (quiz.classList.contains('hidden')) {
-                quiz.classList.remove('hidden');
-                btn.textContent = '🧠 Ocultar Quiz';
-            } else {
-                quiz.classList.add('hidden');
-                btn.textContent = '🧠 Teste Seus Conhecimentos';
-                // Reset quiz
-                document.getElementById('quizContent').classList.remove('hidden');
-                document.getElementById('quizResult').classList.add('hidden');
-                document.querySelectorAll('.quiz-option').forEach(option => {
-                    option.classList.remove('bg-green-200', 'bg-red-200');
-                    option.classList.add('bg-gray-100');
-                    option.disabled = false;
+        function initializeQuiz() {
+            // Event listeners para seleção de dificuldade
+            document.querySelectorAll('.difficulty-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const level = this.dataset.level;
+                    selectLevel(level);
                 });
+            });
+
+            // Event listener para campos do formulário
+            const formFields = ['userName', 'userAge', 'userPhone'];
+            formFields.forEach(fieldId => {
+                document.getElementById(fieldId).addEventListener('input', validateForm);
+            });
+
+            // Event listener para começar quiz
+            document.getElementById('beginQuiz').addEventListener('click', startQuizGame);
+
+            // Event listener para próxima questão
+            document.getElementById('nextQuestion').addEventListener('click', goToNextQuestion);
+
+            // Event listener para finalizar quiz
+            document.getElementById('finishQuiz').addEventListener('click', finishQuizGame);
+
+            // Event listener para voltar ao início
+            document.getElementById('backToHome').addEventListener('click', returnToHome);
+        }
+
+        function validateForm() {
+            const name = document.getElementById('userName').value.trim();
+            const age = document.getElementById('userAge').value;
+            const phone = document.getElementById('userPhone').value.trim();
+            
+            const isFormValid = name && age && phone && quizState.selectedLevel;
+            
+            const beginBtn = document.getElementById('beginQuiz');
+            if (isFormValid) {
+                beginBtn.disabled = false;
+                beginBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+                beginBtn.classList.add('hover:scale-105');
+            } else {
+                beginBtn.disabled = true;
+                beginBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                beginBtn.classList.remove('hover:scale-105');
             }
         }
 
-        function checkAnswer(button, isCorrect) {
-            const options = document.querySelectorAll('.quiz-option');
+        function selectLevel(level) {
+            // Remover seleção anterior
+            document.querySelectorAll('.difficulty-card').forEach(card => {
+                card.classList.remove('ring-2', 'ring-purple-500');
+            });
+
+            // Marcar nível selecionado
+            document.querySelector(`[data-level="${level}"]`).classList.add('ring-2', 'ring-purple-500');
+
+            // Atualizar estado
+            quizState.selectedLevel = level;
+
+            // Validar formulário
+            validateForm();
+        }
+
+        function startQuizGame() {
+            if (!quizState.selectedLevel) return;
+
+            // Capturar dados do usuário
+            quizState.userInfo = {
+                name: document.getElementById('userName').value.trim(),
+                age: document.getElementById('userAge').value,
+                phone: document.getElementById('userPhone').value.trim()
+            };
+
+            // Configurar quiz
+            quizState.questions = [...quizQuestions[quizState.selectedLevel]];
+            quizState.currentQuestion = 0;
+            quizState.score = 0;
+            quizState.answers = [];
+            quizState.startTime = new Date();
+            quizState.isActive = true;
+
+            // Esconder tela inicial e mostrar interface do quiz
+            document.getElementById('quizHome').classList.add('hidden');
+            document.getElementById('quizInterface').classList.remove('hidden');
+
+            // Atualizar displays
+            document.getElementById('levelName').textContent = 
+                quizState.selectedLevel.charAt(0).toUpperCase() + quizState.selectedLevel.slice(1);
+            document.getElementById('totalQuestions').textContent = quizState.questions.length;
+
+            // Mostrar primeira questão
+            displayCurrentQuestion();
+        }
+
+        function displayCurrentQuestion() {
+            const question = quizState.questions[quizState.currentQuestion];
+            const questionNum = quizState.currentQuestion + 1;
+            const totalQuestions = quizState.questions.length;
+
+            // Atualizar contadores
+            document.getElementById('questionNumber').textContent = questionNum;
+            document.getElementById('currentScore').textContent = quizState.score;
+
+            // Atualizar barra de progresso
+            const progressPercent = (questionNum / totalQuestions) * 100;
+            document.getElementById('quizProgress').style.width = progressPercent + '%';
+
+            // Renderizar questão
+            document.getElementById('questionContent').innerHTML = `
+                <div class="quiz-question fade-in">
+                    <h3 class="text-2xl font-bold text-purple-400 mb-6">
+                        Questão ${questionNum} de ${totalQuestions}
+                    </h3>
+                    <p class="text-xl text-white mb-8">${question.question}</p>
+                    <div class="space-y-4">
+                        ${question.options.map((option, index) => `
+                            <button onclick="selectQuizAnswer(${index})" 
+                                    class="answer-option quiz-option w-full p-4 rounded-lg text-left transition-all hover:transform hover:scale-105">
+                                <span class="font-semibold text-purple-300">${String.fromCharCode(65 + index)})</span> 
+                                <span class="ml-2">${option}</span>
+                            </button>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+
+            // Esconder botões de controle
+            document.getElementById('nextQuestion').classList.add('hidden');
+            document.getElementById('finishQuiz').classList.add('hidden');
+        }
+
+        function selectQuizAnswer(selectedIndex) {
+            const question = quizState.questions[quizState.currentQuestion];
+            const options = document.querySelectorAll('.answer-option');
+            
+            // Desabilitar todas as opções
             options.forEach(option => {
                 option.disabled = true;
-                if (option === button) {
-                    if (isCorrect) {
-                        option.classList.remove('bg-gray-100');
-                        option.classList.add('bg-green-200');
-                    } else {
-                        option.classList.remove('bg-gray-100');
-                        option.classList.add('bg-red-200');
-                    }
-                }
+                option.classList.remove('hover:transform', 'hover:scale-105');
+                option.style.cursor = 'default';
             });
             
+            // Marcar resposta selecionada
+            options[selectedIndex].classList.add('selected');
+            
+            // Mostrar resposta correta
+            options[question.correct].classList.add('correct');
+            
+            // Marcar incorreta se necessário
+            if (selectedIndex !== question.correct) {
+                options[selectedIndex].classList.add('incorrect');
+            } else {
+                quizState.score += 10;
+                document.getElementById('currentScore').textContent = quizState.score;
+            }
+            
+            // Salvar resposta
+            quizState.answers.push({
+                questionIndex: quizState.currentQuestion,
+                selected: selectedIndex,
+                correct: question.correct,
+                isCorrect: selectedIndex === question.correct
+            });
+            
+            // Mostrar explicação após um delay
             setTimeout(() => {
-                if (isCorrect) {
-                    document.getElementById('quizContent').classList.add('hidden');
-                    document.getElementById('quizResult').classList.remove('hidden');
-                }
+                showExplanation(question.explanation);
+                showNextButton();
             }, 1000);
         }
 
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+        function showExplanation(explanation) {
+            const explanationDiv = document.createElement('div');
+            explanationDiv.className = 'mt-6 p-4 bg-blue-900 rounded-lg border border-blue-500 fade-in';
+            explanationDiv.innerHTML = `
+                <h4 class="font-bold text-blue-300 mb-2">💡 Explicação:</h4>
+                <p class="text-blue-100">${explanation}</p>
+            `;
+            document.querySelector('.quiz-question').appendChild(explanationDiv);
+        }
+
+        function showNextButton() {
+            const isLastQuestion = quizState.currentQuestion === quizState.questions.length - 1;
+            
+            if (isLastQuestion) {
+                document.getElementById('finishQuiz').classList.remove('hidden');
+            } else {
+                document.getElementById('nextQuestion').classList.remove('hidden');
+            }
+        }
+
+        function goToNextQuestion() {
+            quizState.currentQuestion++;
+            displayCurrentQuestion();
+        }
+
+        function finishQuizGame() {
+            quizState.isActive = false;
+            showQuizResults();
+        }
+
+        function showQuizResults() {
+            // Esconder interface do quiz
+            document.getElementById('quizInterface').classList.add('hidden');
+            
+            // Calcular estatísticas
+            const totalQuestions = quizState.questions.length;
+            const correctAnswers = quizState.answers.filter(answer => answer.isCorrect).length;
+            const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+            const endTime = new Date();
+            const timeTaken = Math.round((endTime - quizState.startTime) / 1000);
+            
+            // Determinar performance
+            let performance, emoji, message, color;
+            if (percentage >= 90) {
+                performance = 'Excelente!';
+                emoji = '🏆';
+                message = 'Parabéns! Você domina completamente o assunto!';
+                color = 'text-yellow-400';
+            } else if (percentage >= 70) {
+                performance = 'Muito Bom!';
+                emoji = '🎉';
+                message = 'Ótimo trabalho! Continue assim!';
+                color = 'text-green-400';
+            } else if (percentage >= 50) {
+                performance = 'Bom Esforço!';
+                emoji = '📚';
+                message = 'Você está no caminho certo! Continue estudando.';
+                color = 'text-blue-400';
+            } else {
+                performance = 'Continue Tentando!';
+                emoji = '💪';
+                message = 'Não desista! Revise o material e tente novamente.';
+                color = 'text-orange-400';
+            }
+            
+            // Mostrar resultados
+            document.getElementById('quizResults').classList.remove('hidden');
+            document.getElementById('resultsContent').innerHTML = `
+                <div class="text-6xl mb-6">${emoji}</div>
+                <h3 class="text-3xl font-bold ${color} mb-4">${performance}</h3>
+                <p class="text-xl text-white mb-8">${message}</p>
                 
-                // Close mobile menu if open
-                document.getElementById('mobileMenu').classList.add('hidden');
-            });
-        });
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-blue-900 p-6 rounded-lg border border-blue-500">
+                        <div class="text-3xl mb-2">🎯</div>
+                        <h4 class="font-bold text-blue-300">Pontuação</h4>
+                        <p class="text-2xl font-bold text-white">${quizState.score}/${totalQuestions * 10}</p>
+                    </div>
+                    
+                    <div class="bg-green-900 p-6 rounded-lg border border-green-500">
+                        <div class="text-3xl mb-2">✅</div>
+                        <h4 class="font-bold text-green-300">Acertos</h4>
+                        <p class="text-2xl font-bold text-white">${correctAnswers}/${totalQuestions}</p>
+                        <p class="text-sm text-green-200">${percentage}% de aproveitamento</p>
+                    </div>
+                    
+                    <div class="bg-purple-900 p-6 rounded-lg border border-purple-500">
+                        <div class="text-3xl mb-2">⏱️</div>
+                        <h4 class="font-bold text-purple-300">Tempo</h4>
+                        <p class="text-2xl font-bold text-white">${Math.floor(timeTaken / 60)}:${(timeTaken % 60).toString().padStart(2, '0')}</p>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <button onclick="resetQuiz()" class="interactive-btn text-white px-8 py-4 rounded-full font-semibold">
+                        🔄 Tentar Novamente
+                    </button>
+                    <button onclick="sendQuizResultByEmail()" class="bg-green-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-700 transition-colors">
+                        📧 Enviar para Administrador
+                    </button>
+                    <button onclick="returnToHome()" class="bg-gray-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-gray-700 transition-colors">
+                        🏠 Voltar ao Início
+                    </button>
+                </div>
+                
+                <div id="emailStatus" class="hidden mt-6 p-4 rounded-lg border"></div>
+            `;
+        }
 
-        // Add floating animation to network elements
-        document.addEventListener('DOMContentLoaded', function() {
-            const networkElements = document.querySelectorAll('.network-animation');
-            networkElements.forEach((element, index) => {
-                element.style.animationDelay = `${index * 0.5}s`;
+        function resetQuiz() {
+            // Reset do estado
+            quizState = {
+                currentQuestion: 0,
+                score: 0,
+                answers: [],
+                startTime: null,
+                selectedLevel: '',
+                questions: [],
+                isActive: false,
+                userInfo: {
+                    name: '',
+                    age: '',
+                    phone: ''
+                }
+            };
+
+            // Esconder resultados
+            document.getElementById('quizResults').classList.add('hidden');
+            
+            // Mostrar tela inicial
+            document.getElementById('quizHome').classList.remove('hidden');
+            
+            // Reset formulário
+            document.getElementById('userInfoForm').reset();
+            
+            // Reset seleções
+            document.querySelectorAll('.difficulty-card').forEach(card => {
+                card.classList.remove('ring-2', 'ring-purple-500');
             });
-        });
+            
+            // Desabilitar botão de início
+            const beginBtn = document.getElementById('beginQuiz');
+            beginBtn.disabled = true;
+            beginBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            beginBtn.classList.remove('hover:scale-105');
+        }
+
+        function returnToHome() {
+            resetQuiz();
+        }
+
+        // === FUNÇÕES DE EMAIL ===
+
+        async function sendQuizResultByEmail() {
+            const statusDiv = document.getElementById('emailStatus');
+            
+            // Mostrar loading
+            showEmailStatus('📤 Enviando resultado para o administrador...', 'loading');
+
+            try {
+                // Preparar dados do resultado
+                const resultData = prepareEmailData();
+                
+                // Enviar via EmailJS
+                const response = await emailjs.send(
+                    'service_2bh66kk', // Service ID
+                    'template_rnsbj5r', // Template ID
+                    resultData,
+                    'FuoZ8AXhSf0fdJEhW' // Chave pública do EmailJS
+                );
+
+                if (response.status === 200) {
+                    showEmailStatus('✅ Resultado enviado com sucesso para o administrador!', 'success');
+                } else {
+                    throw new Error('Falha no envio');
+                }
+            } catch (error) {
+                console.error('Erro ao enviar email:', error);
+                showEmailStatus('❌ Erro ao enviar email. Verifique sua conexão e tente novamente.', 'error');
+            }
+        }
+
+        function prepareEmailData() {
+            const totalQuestions = quizState.questions.length;
+            const correctAnswers = quizState.answers.filter(answer => answer.isCorrect).length;
+            const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+            const endTime = new Date();
+            const timeTaken = Math.round((endTime - quizState.startTime) / 1000);
+            
+            // Criar resumo das questões
+            let questionsDetail = '';
+            quizState.answers.forEach((answer, index) => {
+                const question = quizState.questions[answer.questionIndex];
+                const status = answer.isCorrect ? '✅ CORRETO' : '❌ INCORRETO';
+                const selectedOption = question.options[answer.selected];
+                const correctOption = question.options[answer.correct];
+                
+                questionsDetail += `
+Questão ${index + 1}: ${question.question}
+Sua resposta: ${selectedOption}
+Resposta correta: ${correctOption}
+Status: ${status}
+Explicação: ${question.explanation}
+
+-------------------
+`;
+            });
+
+            // Determinar nível de performance
+            let performanceLevel, feedbackMessage;
+            if (percentage >= 90) {
+                performanceLevel = 'Excelente';
+                feedbackMessage = 'Parabéns! Você domina completamente o assunto e demonstrou conhecimento excepcional em redes de computadores.';
+            } else if (percentage >= 70) {
+                performanceLevel = 'Muito Bom';
+                feedbackMessage = 'Ótimo trabalho! Você tem um bom domínio dos conceitos de redes e está no caminho certo.';
+            } else if (percentage >= 50) {
+                performanceLevel = 'Bom';
+                feedbackMessage = 'Bom esforço! Você demonstra conhecimento básico, mas há espaço para melhorar. Continue estudando!';
+            } else {
+                performanceLevel = 'Precisa Melhorar';
+                feedbackMessage = 'Continue tentando! Revise o material de estudo e pratique mais para aprimorar seus conhecimentos.';
+            }
+
+            return {
+                participant_name: quizState.userInfo.name,
+                participant_age: quizState.userInfo.age,
+                participant_phone: quizState.userInfo.phone,
+                difficulty: quizState.selectedLevel.charAt(0).toUpperCase() + quizState.selectedLevel.slice(1),
+                total_questions: totalQuestions,
+                correct_answers: correctAnswers,
+                final_score: quizState.score,
+                max_score: totalQuestions * 10,
+                percentage: percentage,
+                performance_level: performanceLevel,
+                time_spent: Math.round(timeTaken / 60),
+                completion_date: new Date().toLocaleDateString('pt-BR'),
+                feedback_message: feedbackMessage,
+                summary_report: questionsDetail
+            };
+        }
+
+        function showEmailStatus(message, type) {
+            const statusDiv = document.getElementById('emailStatus');
+            statusDiv.classList.remove('hidden', 'bg-green-900', 'bg-red-900', 'bg-blue-900', 'border-green-500', 'border-red-500', 'border-blue-500');
+            
+            if (type === 'success') {
+                statusDiv.classList.add('bg-green-900', 'border-green-500', 'text-green-200');
+            } else if (type === 'error') {
+                statusDiv.classList.add('bg-red-900', 'border-red-500', 'text-red-200');
+            } else if (type === 'loading') {
+                statusDiv.classList.add('bg-blue-900', 'border-blue-500', 'text-blue-200');
+            }
+            
+            statusDiv.innerHTML = message;
+        }
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98e29206d21df1c9',t:'MTc2MDM5NzY1Ni4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-</html>
 
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Inicializar EmailJS
+        (function() {
+            emailjs.init("FuoZ8AXhSf0fdJEhW");
+        })();
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'98f7e5f5916eb4e8',t:'MTc2MDYyMTI5NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
